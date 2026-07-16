@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CARAI — Center for Applied Research in Artificial Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="carai-i18n.js" defer></script>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:#faf8f3}
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+@keyframes heroKen{0%{opacity:0;transform:scale(1.14) translate3d(1.5%,-1.5%,0)}7%{opacity:1}33%{opacity:1}40%{opacity:0}100%{opacity:0;transform:scale(1) translate3d(-1.5%,1.5%,0)}}
+.heroFrame{will-change:opacity,transform}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+#groupsTrack::-webkit-scrollbar{display:none}
+.skip-link:focus{left:16px !important}
+.nav-link:hover{color:var(--accent) !important}
+.icon-btn:hover{border-color:var(--accent) !important;color:var(--accent) !important}
+.btn-primary:hover{background:var(--accentD) !important}
+.btn-ghost:hover{background:rgba(255,255,255,.16) !important}
+.footer-link:hover{color:#fff !important}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}.heroFrame{animation:none!important}}
+</style>
+</head>
+<body>
+
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--accent:#1668A0;--paper:#FAF8F3;--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:12px;padding:10px 16px;background:var(--ink);color:#fff;border-radius:6px;font:500 13px 'Public Sans',sans-serif;z-index:60;text-decoration:none;">Skip to content</a>
+
+  <!-- ===== UTILITY BAR ===== -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><span data-lang="en" style="opacity:1;cursor:pointer;">EN</span><span style="opacity:.4;">·</span><span data-lang="ko" style="opacity:.55;cursor:pointer;">한국어</span><a href="publications.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- ===== PRIMARY NAV ===== -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="#about" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="people.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="initiative.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="media.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="research.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Research</a>
+        <a href="groups.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Groups</a>
+        <a href="publications.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Publications</a>
+        <a href="contact.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Contact</a>
+        <div class="icon-btn" style="width:34px;height:34px;border:1px solid var(--hair);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink2);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6"></circle><path d="M20 20l-4-4"></path></svg></div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section style="position:relative;">
+    <div style="height:560px;position:relative;overflow:hidden;background:#141210;">
+      <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:1;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 22% 25%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(196,134,58,.18),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#E7DECF,#E7DECF 12px,#DDD3C1 12px,#DDD3C1 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 0s infinite both;"></div>
+      <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 72% 30%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(62,154,214,.22),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#D8E4EC,#D8E4EC 12px,#C6D8E4 12px,#C6D8E4 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 7s infinite both;"></div>
+      <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 42% 62%,rgba(255,255,255,.10),transparent 55%),linear-gradient(120deg,rgba(150,96,60,.22),rgba(20,18,15,.10)),repeating-linear-gradient(135deg,#E4D9C8,#E4D9C8 12px,#D8CBB6 12px,#D8CBB6 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 14s infinite both;"></div>
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true" src="uploads/0705-1.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;z-index:1;"></video>
+      <div style="position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(20,18,15,.82) 0%,rgba(20,18,15,.46) 48%,rgba(20,18,15,.14) 100%),linear-gradient(0deg,rgba(20,18,15,.34),transparent 42%);"></div>
+      <div style="max-width:1280px;margin:0 auto;padding:54px 40px 66px;height:100%;position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:end;">
+        <div style="max-width:640px;align-self:end;">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:22px;">Center for Applied Research in Artificial Intelligence</div>
+          <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,4.6vw,60px);line-height:1.05;letter-spacing:-0.02em;color:#fff;margin:0 0 22px;">Explainable AI for reliable human–AI decisions.</h1>
+          <p style="font-size:18px;line-height:1.55;color:rgba(255,255,255,.84);max-width:520px;margin:0 0 30px;">Building robust and trustworthy AI — developing the fundamentals of the technology while pursuing its advanced, wide-reaching applications.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="research.html" class="btn-primary" style="height:50px;padding:0 26px;border-radius:8px;background:var(--accent,#1668A0);color:#fff;font:600 15px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background .18s;">Explore research<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            <a href="publications.html" class="btn-ghost" style="height:50px;padding:0 24px;border-radius:8px;border:1px solid rgba(255,255,255,.5);color:#fff;font:600 15px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.06);transition:background .18s;">Publications</a>
+          </div>
+        </div>
+        <div style="align-self:start;width:100%;background:var(--surface);border-radius:12px;padding:24px;box-shadow:0 18px 44px rgba(20,18,15,.30);">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:16px;">Four research groups</div>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">01</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">Explainable AI Theory</span></a>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">02</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">Multimodal Learning &amp; Detection</span></a>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">03</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">Few-shot Learning in the Wild</span></a>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">04</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">Decision Making &amp; Recommendation</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED STRIP ===== -->
+  <section style="border-bottom:1px solid var(--hair);background:var(--surface);">
+    <div style="max-width:1280px;margin:0 auto;padding:24px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+      <a href="#groups" style="display:flex;gap:14px;padding-right:26px;border-right:1px solid var(--hair);text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">01</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);">Theoretical research on explainable AI (XAI)</span>
+      </a>
+      <a href="#groups" style="display:flex;gap:14px;padding:0 26px;border-right:1px solid var(--hair);text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">02</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);">Multimodal learning and detection</span>
+      </a>
+      <a href="#groups" style="display:flex;gap:14px;padding:0 26px;border-right:1px solid var(--hair);text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">03</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);">Learning with few data in the wild</span>
+      </a>
+      <a href="#groups" style="display:flex;gap:14px;padding-left:26px;text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">04</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);">AI for decision making &amp; recommendation</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 01 ABOUT / MISSION ===== -->
+  <section id="about" style="max-width:1280px;margin:0 auto;padding:92px 40px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:20px;">01</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-0.015em;margin:0 0 20px;">Reliable decision assistance for people</h2>
+        <p style="font-size:17px;line-height:1.62;color:var(--ink2);max-width:490px;margin:0 0 18px;">Explainable AI provides reliable decision assistance for humans in human–AI interaction. Developing robust and trustworthy AI models is now essential for leading-edge AI technology R&amp;D.</p>
+        <p style="font-size:17px;line-height:1.62;color:var(--ink2);max-width:490px;margin:0 0 28px;">CARAI pursues the future of AI by developing its fundamentals while seeking advanced and wide-reaching applications across four coordinated research groups.</p>
+        <a href="initiative.html" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;display:inline-flex;align-items:center;gap:7px;">About the center<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#141210;position:relative;box-shadow:0 12px 30px rgba(27,24,21,.12);">
+        <video id="aboutVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true" src="uploads/0706(2).mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 RESEARCH GROUPS ===== -->
+  <section id="groups" style="background:var(--surface);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);">
+    <div style="max-width:1280px;margin:0 auto;padding:92px 40px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:24px;">
+        <div style="max-width:640px;">
+          <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:16px;">02</div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,4vw,52px);line-height:1.06;letter-spacing:-0.02em;margin:0 0 14px;">Research groups</h2>
+          <p style="font-size:16px;line-height:1.55;color:var(--muted);max-width:440px;margin:0;">Four groups advancing the theory and application of explainable, trustworthy AI.</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span id="groupsCounter" style="font:500 13px 'IBM Plex Mono',monospace;color:var(--muted);margin-right:6px;">01 / 04</span>
+          <button id="groupsPrev" aria-label="Previous group" class="icon-btn" style="width:52px;height:52px;border:1px solid var(--hair);border-radius:50%;background:var(--paper,#FAF8F3);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s,border-color .18s,color .18s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 18l-6-6 6-6"></path></svg></button>
+          <button id="groupsNext" aria-label="Next group" class="icon-btn" style="width:52px;height:52px;border:1px solid var(--hair);border-radius:50%;background:var(--paper,#FAF8F3);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s,border-color .18s,color .18s;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div id="research" style="position:relative;">
+        <div id="groupsTrack" style="display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:16px;">
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div style="position:relative;overflow:hidden;background:#EAEEF4;">
+              <img src="uploads/Group1_2.png" alt="Group 1 — Explainable AI Theory Lab" onerror="this.style.visibility='hidden'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 01 · Theory</div>
+              <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.14;letter-spacing:-0.01em;margin:0 0 16px;">Explainable AI Theory</h3>
+              <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px;max-width:420px;">Foundational, theoretical research into what makes AI decisions interpretable and trustworthy.</p>
+              <a href="groups.html#group1" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div style="position:relative;overflow:hidden;background:#EDF1F6;"><img src="uploads/Group2_4.png" alt="Group 2 — Multimodal Learning and Detection Lab" onerror="this.style.visibility='hidden'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 02 · Multimodality</div>
+              <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.14;letter-spacing:-0.01em;margin:0 0 16px;">Multimodal Learning &amp; Detection</h3>
+              <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px;max-width:420px;">Learning across modalities — vision, language, and signals — for robust detection and understanding.</p>
+              <a href="groups.html#group2" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div style="position:relative;overflow:hidden;background:#EDF1F6;"><img src="uploads/Group3_2.png" alt="Group 3 — Few-shot Learning in the Wild Lab" onerror="this.style.visibility='hidden'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 03 · In-context Learning</div>
+              <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.14;letter-spacing:-0.01em;margin:0 0 16px;">Few-shot Learning in the Wild</h3>
+              <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px;max-width:420px;">Learning from few examples in open, unconstrained real-world environments.</p>
+              <a href="groups.html#group3" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div style="position:relative;overflow:hidden;background:#141126;"><img src="uploads/Group4_4.png" alt="Group 4 — Decision Making and Recommendation Lab" onerror="this.style.visibility='hidden'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 04 · Decision Support</div>
+              <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.14;letter-spacing:-0.01em;margin:0 0 16px;">Decision Making &amp; Recommendation</h3>
+              <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px;max-width:420px;">Applying explainable AI to real decision-making and recommendation systems.</p>
+              <a href="groups.html#group4" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+        </div>
+        <div id="groupsDots" style="display:flex;justify-content:center;gap:10px;margin-top:28px;">
+          <button data-i="0" aria-label="Go to group 1" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--accent,#1668A0);cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="1" aria-label="Go to group 2" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--hair);cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="2" aria-label="Go to group 3" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--hair);cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="3" aria-label="Go to group 4" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--hair);cursor:pointer;padding:0;transition:background .2s;"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION BAND (inverted) ===== -->
+  <section style="background:var(--ink);color:#EDE7DB;">
+    <div style="max-width:960px;margin:0 auto;padding:96px 40px;text-align:center;">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:26px;">Our mission</div>
+      <p style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(24px,3.4vw,38px);line-height:1.34;letter-spacing:-0.01em;color:#F6F1E7;margin:0;">"Researchers of CARAI pursue the future of AI by developing the fundamentals of AI technology while seeking advanced and wide-reaching applications of AI."</p>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATIONS + CONTACT ===== -->
+  <section id="pubs" style="max-width:1280px;margin:0 auto;padding:92px 40px;">
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:stretch;">
+      <div>
+        <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:18px;">03</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3vw,40px);line-height:1.1;letter-spacing:-0.01em;margin:0 0 18px;">Publications</h2>
+        <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);max-width:520px;margin:0 0 30px;">Globally competitive research excellence from across CARAI Center's four groups, spanning both the theory and applications of explainable and trustworthy AI, demonstrated through publications in Top-tier AI conferences recognized by researchers worldwide, including CVPR, ICML, ICLR, AAAI, ICCV, NeurIPS, and so on.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;">
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);">Explainable AI</span>
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);">Multimodal Learning</span>
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);">Few-shot Learning</span>
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);">Recommendation</span>
+        </div>
+        <a href="publications.html" class="btn-primary" style="height:50px;padding:0 26px;border-radius:8px;background:var(--accent,#1668A0);color:#fff;font:600 15px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background .18s;">Browse all publications<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div id="contact" style="background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:32px;display:flex;flex-direction:column;">
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:18px;">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div>
+            <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Address</div>
+            <div style="font-size:15px;line-height:1.5;color:var(--ink);">335 Gwahak-ro (373-1 Guseong-dong)<br>Yuseong-gu, Daejeon<br>Republic of Korea</div>
+          </div>
+          <div style="border-top:1px solid var(--hair);padding-top:18px;">
+            <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Institution</div>
+            <div style="font-size:15px;line-height:1.5;color:var(--ink);">Korea Advanced Institute of Science and Technology</div>
+          </div>
+          <a href="contact.html" style="margin-top:6px;color:var(--accent,#1668A0);font:600 14px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:7px;">Get in touch<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;">
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;">
+        <div>
+          <img src="carai-logo.png" alt="CARAI" style="height:74px;width:auto;display:block;margin-bottom:18px;filter:brightness(0) invert(1);opacity:.92;">
+          <p style="font-size:14px;line-height:1.6;color:#8A8177;max-width:260px;margin:0;">Center for Applied Research in Artificial Intelligence — KAIST.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#EDE7DB;margin-bottom:4px;">Research</div><a href="#groups" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Explainable AI Theory</a><a href="#groups" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Multimodal Learning</a><a href="#groups" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Few-shot Learning</a><a href="#groups" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Recommendation</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px;"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#EDE7DB;margin-bottom:4px;">Center</div><a href="initiative.html" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">About</a><a href="publications.html" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Publications</a><a href="contact.html" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Contact</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px;"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#EDE7DB;margin-bottom:4px;">Partner</div><a href="#" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Korea Advanced Institute of Science and Technology</a><a href="#" class="footer-link" style="font-size:14px;color:#A29A90;text-decoration:none;">Institute for Security Convergence</a></div>
+      </div>
+      <div style="margin-top:44px;padding-top:22px;border-top:1px solid #39342E;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">
+        <span>© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+        <div style="display:flex;gap:20px;"><a href="#" style="color:#6C645B;text-decoration:none;">Privacy</a><a href="#" style="color:#6C645B;text-decoration:none;">Accessibility</a></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    var v = document.getElementById('heroVideo');
+    if (v) {
+      var show = function () { v.style.opacity = '1'; };
+      v.addEventListener('loadeddata', show);
+      v.muted = true;
+      v.defaultMuted = true;
+      v.volume = 0;
+      v.loop = true;
+      v.removeAttribute('controls');
+      v.addEventListener('ended', function () { try { v.currentTime = 0; var r = v.play(); if (r && r.catch) r.catch(function () {}); } catch (e) {} });
+      v.addEventListener('volumechange', function () { if (!v.muted || v.volume > 0) { v.muted = true; v.volume = 0; } });
+      try { v.load(); } catch (e) {}
+      if (v.readyState >= 2) show();
+      var p = v.play && v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  } catch (e) {}
+  try {
+    var a = document.getElementById('aboutVideo');
+    if (a) {
+      a.muted = true;
+      a.defaultMuted = true;
+      a.volume = 0;
+      a.loop = true;
+      a.removeAttribute('controls');
+      a.addEventListener('ended', function () { try { a.currentTime = 0; var r = a.play(); if (r && r.catch) r.catch(function () {}); } catch (e) {} });
+      a.addEventListener('volumechange', function () { if (!a.muted || a.volume > 0) { a.muted = true; a.volume = 0; } });
+      try { a.load(); } catch (e) {}
+      var pa = a.play && a.play();
+      if (pa && pa.catch) pa.catch(function () {});
+    }
+  } catch (e) {}
+  try {
+    var track = document.getElementById('groupsTrack');
+    if (track) {
+      var slides = track.children;
+      var n = slides.length;
+      var prev = document.getElementById('groupsPrev');
+      var next = document.getElementById('groupsNext');
+      var counter = document.getElementById('groupsCounter');
+      var dotWrap = document.getElementById('groupsDots');
+      var dots = dotWrap ? dotWrap.querySelectorAll('button') : [];
+      var cur = 0;
+      var goTo = function (i) {
+        cur = Math.max(0, Math.min(n - 1, i));
+        var s = slides[cur];
+        track.scrollTo({ left: s.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        sync();
+      };
+      var sync = function () {
+        if (counter) counter.textContent = ('0' + (cur + 1)).slice(-2) + ' / ' + ('0' + n).slice(-2);
+        for (var d = 0; d < dots.length; d++) dots[d].style.background = (d === cur) ? 'var(--accent,#1668A0)' : 'var(--hair)';
+        if (prev) prev.style.opacity = cur === 0 ? '.4' : '1';
+        if (next) next.style.opacity = cur === n - 1 ? '.4' : '1';
+      };
+      if (prev) prev.addEventListener('click', function () { goTo(cur - 1); });
+      if (next) next.addEventListener('click', function () { goTo(cur + 1); });
+      for (var d = 0; d < dots.length; d++) {
+        (function (idx) { dots[idx].addEventListener('click', function () { goTo(idx); }); })(d);
+      }
+      var raf;
+      track.addEventListener('scroll', function () {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          var w = track.clientWidth || 1;
+          var i = Math.round(track.scrollLeft / w);
+          if (i !== cur) { cur = Math.max(0, Math.min(n - 1, i)); sync(); }
+        });
+      });
+      sync();
+    }
+  } catch (e) {}
+});
+</script>
+</body>
+</html>

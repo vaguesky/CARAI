@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — CARAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="carai-i18n.js" defer></script>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:#faf8f3}
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(27,24,21,.12)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+.nav-link:hover{color:var(--accent) !important}
+</style>
+</head>
+<body>
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#C4863A;--accent:#1668A0;--paper:#FAF8F3;--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><span data-lang="en" style="opacity:1;cursor:pointer;">EN</span><span style="opacity:.4;">·</span><span data-lang="ko" style="opacity:.55;cursor:pointer;">한국어</span><a href="publications.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- NAV with About dropdown -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="index.html#about" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="people.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="initiative.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="media.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="research.html" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;">Research</a>
+        <a href="groups.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Groups</a>
+        <a href="publications.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Publications</a>
+        <a href="contact.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">Research</div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+      <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">Explainable AI for the industries of the future</h1>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;">We develop XAI that keeps results accurate while making them explainable — so human experts can understand, trust, and collaborate with AI as a partner.</p>
+    </div>
+  </section>
+
+  <!-- WHY BAND -->
+  <section style="max-width:1280px;margin:20px auto 0;padding:0 40px;">
+    <div style="background:var(--ink);border-radius:20px;padding:clamp(36px,6vw,68px);position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-90px;right:-70px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(62,154,214,.28),transparent 66%);"></div>
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:22px;position:relative;">Why a specialized center</div>
+      <p style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(22px,3vw,34px);line-height:1.36;letter-spacing:-0.01em;color:#F6F1E7;margin:0 0 24px;max-width:30ch;position:relative;">As advanced science and technology converge, AI is the engine of the Fourth Industrial Revolution — and industry needs models it can actually trust.</p>
+      <p style="font-size:15.5px;line-height:1.7;color:#C9C1B2;margin:0;max-width:64ch;position:relative;">Real-world deployment demands comprehensive analysis of diverse sensor data — audio, visual, and beyond. XAI keeps accuracy high while explaining the reasoning behind each result, enabling experts to understand, trust, and manage AI, and to work with it as a partner expert. Securing these foundational technologies is essential for Korea's future industries.</p>
+    </div>
+  </section>
+
+  <!-- WHAT XAI DELIVERS -->
+  <section style="max-width:1280px;margin:0 auto;padding:60px 40px 10px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;">
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <span style="width:44px;height:44px;flex:none;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></span>
+        <div><div style="font:600 15.5px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:5px;">Accurate &amp; explainable</div><p style="font-size:13.5px;line-height:1.55;color:var(--ink2);margin:0;">High accuracy with detailed, faithful explanations of every result.</p></div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <span style="width:44px;height:44px;flex:none;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"></path></svg></span>
+        <div><div style="font:600 15.5px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:5px;">Understand, trust, manage</div><p style="font-size:13.5px;line-height:1.55;color:var(--ink2);margin:0;">Support humans in interpreting and effectively governing AI outcomes.</p></div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <span style="width:44px;height:44px;flex:none;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span>
+        <div><div style="font:600 15.5px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:5px;">AI as a partner expert</div><p style="font-size:13.5px;line-height:1.55;color:var(--ink2);margin:0;">Collaboration between human experts and AI toward finalized judgments.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE THRUSTS -->
+  <section style="max-width:1280px;margin:0 auto;padding:56px 40px 10px;">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:30px;">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);letter-spacing:-0.01em;color:var(--ink);">Core research thrusts</span>
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);">05 tasks</span>
+      <span style="flex:1;height:1px;background:var(--hair);"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;">
+      <article class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:28px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:18px;right:22px;font-family:'Newsreader',serif;font-weight:500;font-size:44px;color:var(--tint);line-height:1;">01</div>
+        <span style="width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:20px;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"></path></svg></span>
+        <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">XAI Theory</div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;line-height:1.24;margin:0 0 10px;color:var(--ink);">Explainable AI (XAI) Theory</h3>
+        <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Foundational research on the learning, inference, and result-explanation of state-of-the-art deep neural networks for practical, real-world use.</p>
+      </article>
+      <article class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:28px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:18px;right:22px;font-family:'Newsreader',serif;font-weight:500;font-size:44px;color:var(--tint);line-height:1;">02</div>
+        <span style="width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:20px;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2.5"></circle><circle cx="18" cy="7" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M8 8l3 8M16 8l-3 8"></path></svg></span>
+        <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Multimodality</div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;line-height:1.24;margin:0 0 10px;color:var(--ink);">Multimodal Learning &amp; Detection</h3>
+        <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Fusion learning and recognition across the diverse sensor information — audio, visual, and more — commonly used across industrial fields.</p>
+      </article>
+      <article class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:28px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:18px;right:22px;font-family:'Newsreader',serif;font-weight:500;font-size:44px;color:var(--tint);line-height:1;">03</div>
+        <span style="width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:20px;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M6 7l1 12h10l1-12M9 7V5a3 3 0 0 1 6 0v2"></path></svg></span>
+        <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">In-context Learning</div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;line-height:1.24;margin:0 0 10px;color:var(--ink);">Few-shot Learning in Wild</h3>
+        <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Explainable learning where training data is scarce or absent in adverse, real-world industrial environments.</p>
+      </article>
+      <article class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:28px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:18px;right:22px;font-family:'Newsreader',serif;font-weight:500;font-size:44px;color:var(--tint);line-height:1;">04</div>
+        <span style="width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:20px;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"></path></svg></span>
+        <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Decision Support</div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;line-height:1.24;margin:0 0 10px;color:var(--ink);">Decision Making &amp; Recommendation</h3>
+        <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Situation awareness, key-content extraction, report generation, complex decision-making, and expert interaction in complex scenarios.</p>
+      </article>
+      <article class="lift" style="background:linear-gradient(135deg,var(--accent,#1668A0),var(--accentD));border:1px solid var(--accent,#1668A0);border-radius:16px;padding:28px;position:relative;overflow:hidden;color:#fff;">
+        <div style="position:absolute;top:18px;right:22px;font-family:'Newsreader',serif;font-weight:500;font-size:44px;color:rgba(255,255,255,.22);line-height:1;">05</div>
+        <span style="width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path><path d="M3 4v16"></path></svg></span>
+        <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px;">Industrial Impact</div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;line-height:1.24;margin:0 0 10px;color:#fff;">Industrial Utilization of AI Results</h3>
+        <p style="font-size:14px;line-height:1.58;color:rgba(255,255,255,.86);margin:0;">Developing and transferring core AI technologies — XAI theory, multimodal fusion learning, few-shot learning, and decision support — to industry for practical application and national economic impact.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+      <img src="carai-logo.png" alt="CARAI" style="height:64px;width:auto;filter:brightness(0) invert(1);opacity:.9;">
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

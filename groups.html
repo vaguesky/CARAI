@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Groups — CARAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="carai-i18n.js" defer></script>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:#faf8f3}
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(27,24,21,.12)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+.nav-link:hover{color:var(--accent) !important}
+</style>
+</head>
+<body>
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#2E9E5B;--accent:#1668A0;--paper:#FAF8F3;--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><span data-lang="en" style="opacity:1;cursor:pointer;">EN</span><span style="opacity:.4;">·</span><span data-lang="ko" style="opacity:.55;cursor:pointer;">한국어</span><a href="publications.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- NAV with About dropdown -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="index.html#about" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="people.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="initiative.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="media.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="research.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Research</a>
+        <a href="groups.html" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;">Groups</a>
+        <a href="publications.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Publications</a>
+        <a href="contact.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 40px 26px;">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">Research Groups</div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+      <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">Four groups, one mission</h1>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;">CARAI advances explainable, trustworthy AI through four coordinated research laboratories — from foundational theory to real-world decision support.</p>
+    </div>
+  </section>
+
+  <section style="max-width:1280px;margin:8px auto 0;padding:0 40px;">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="#group1" style="display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid var(--hair);border-radius:999px;text-decoration:none;font:600 13px 'Public Sans',sans-serif;color:var(--ink);"><span style="width:9px;height:9px;border-radius:50%;background:#3E9AD6;"></span>01 · Theory</a>
+      <a href="#group2" style="display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid var(--hair);border-radius:999px;text-decoration:none;font:600 13px 'Public Sans',sans-serif;color:var(--ink);"><span style="width: 9px; height: 9px; border-radius: 50%; background-color: #2D9C5A"></span>02 · Multimodality<br></a>
+      <a href="#group3" style="display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid var(--hair);border-radius:999px;text-decoration:none;font:600 13px 'Public Sans',sans-serif;color:var(--ink);"><span style="width: 9px; height: 9px; border-radius: 50%; background-color: #B53930"></span>03 · In-context Learning</a>
+      <a href="#group4" style="display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid var(--hair);border-radius:999px;text-decoration:none;font:600 13px 'Public Sans',sans-serif;color:var(--ink);"><span style="width: 9px; height: 9px; border-radius: 50%; background: rgb(134, 99, 196);"></span>04 · Decision Support<br></a>
+    </div>
+  </section>
+
+  <section id="group1" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
+    <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
+      <div style="height:6px;background:linear-gradient(135deg,#3E9AD6,#1668A0);"></div>
+      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;">
+        <div>
+          <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#3E9AD6,#1668A0);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">01</div>
+          <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 01 · Theory</span></div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.16;letter-spacing:-0.01em;margin:0 0 12px;color:var(--ink);">Explainable AI Theory</h2>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--ink2);margin:0;">Understanding, certifying, and automating the reasoning of deep models.</p>
+        </div>
+        <div>
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Objectives</div>
+          <ul style="list-style:none;margin:0;padding:0;">
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#3E9AD61F;display:flex;align-items:center;justify-content:center;color:#3E9AD6;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Generating visual explanations of images and inferring causality through temporal analysis of videos.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#3E9AD61F;display:flex;align-items:center;justify-content:center;color:#3E9AD6;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Measuring the reliability of deep learning algorithms, studying adversarial attack algorithms, and building robust explainable models resilient to those attacks.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#3E9AD61F;display:flex;align-items:center;justify-content:center;color:#3E9AD6;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Video-based deep learning models for environmental adaptation and situation-change detection.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#3E9AD61F;display:flex;align-items:center;justify-content:center;color:#3E9AD6;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Automated machine learning (AutoML) to design optimal architectures that maximize learning performance.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#3E9AD61F;display:flex;align-items:center;justify-content:center;color:#3E9AD6;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Automated debugging techniques for deep learning.</span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="group2" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
+    <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
+      <div style="height:6px;background:linear-gradient(135deg,#2E9E5B,#1F7A47);"></div>
+      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;">
+        <div>
+          <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#2E9E5B,#1F7A47);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">02</div>
+          <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 02 · Multimodality</span></div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.16;letter-spacing:-0.01em;margin:0 0 12px;color:var(--ink);">Multimodal Learning &amp; Detection</h2>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--ink2);margin:0;">Recognition and detection across voice, vision, and diverse sensors.</p>
+        </div>
+        <div>
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Objectives</div>
+          <ul style="list-style:none;margin:0;padding:0;">
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#2E9E5B1F;display:flex;align-items:center;justify-content:center;color:#2E9E5B;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Recognizing commands and speakers from a user’s voice input in adverse real-world environments.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#2E9E5B1F;display:flex;align-items:center;justify-content:center;color:#2E9E5B;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Real-time deep-learning processing of varied sensor data — extracting targets, detection/identification, and tracking at scale.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#2E9E5B1F;display:flex;align-items:center;justify-content:center;color:#2E9E5B;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Robust models resistant to adversarial information, deriving associations and causal relations among data to generate evidence for target detection.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#2E9E5B1F;display:flex;align-items:center;justify-content:center;color:#2E9E5B;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Individual- and group-level behavior recognition using multimodal sensor information.</span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="group3" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
+    <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
+      <div style="height:6px;background:linear-gradient(135deg,#D0473D,#9E2D25);"></div>
+      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;">
+        <div>
+          <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#D0473D,#9E2D25);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">03</div>
+          <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 03 · In-context Learning</span></div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.16;letter-spacing:-0.01em;margin:0 0 12px;color:var(--ink);">Few-shot Learning in the Wild</h2>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--ink2);margin:0;">Learning and adapting where labeled data is scarce or absent.</p>
+        </div>
+        <div>
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Objectives</div>
+          <ul style="list-style:none;margin:0;padding:0;">
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#D0473D1F;display:flex;align-items:center;justify-content:center;color:#D0473D;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Intelligent recognition designed for environments with limited training data.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#D0473D1F;display:flex;align-items:center;justify-content:center;color:#D0473D;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Active learning techniques for the efficient use of unclassified data.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#D0473D1F;display:flex;align-items:center;justify-content:center;color:#D0473D;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Situation awareness via reinforcement learning to detect anomaly signs by aggregating uncertain real-world information.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#D0473D1F;display:flex;align-items:center;justify-content:center;color:#D0473D;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Generative adversarial networks to create, synthesize, and augment training data for object and environment recognition.</span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="group4" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
+    <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
+      <div style="height:6px;background:linear-gradient(135deg,#8663C4,#5E3EA0);"></div>
+      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;">
+        <div>
+          <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#8663C4,#5E3EA0);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">04</div>
+          <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 04 · Decision Support</span></div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.16;letter-spacing:-0.01em;margin:0 0 12px;color:var(--ink);">Decision Making &amp; Recommendation</h2>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--ink2);margin:0;">Explainable decisions and recommendations grounded in real situations.</p>
+        </div>
+        <div>
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Objectives</div>
+          <ul style="list-style:none;margin:0;padding:0;">
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#8663C41F;display:flex;align-items:center;justify-content:center;color:#8663C4;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Automatically generating sentences that summarize and report object and action information from videos of unfolding situations.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#8663C41F;display:flex;align-items:center;justify-content:center;color:#8663C4;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Decision-support AI that generates decision candidates and provides the reasons behind each recommendation.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#8663C41F;display:flex;align-items:center;justify-content:center;color:#8663C4;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Explainable decision selection based on result prediction.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--hair);">
+            <span style="width:22px;height:22px;flex:none;border-radius:7px;background:#8663C41F;display:flex;align-items:center;justify-content:center;color:#8663C4;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>
+            <span style="font-size:14.5px;line-height:1.55;color:var(--ink2);">Reinforcement-learning algorithms that recommend optimal decisions and explain why.</span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="height:40px;"></section>
+
+  <!-- INTER-GROUP CONNECTION -->
+  <section style="max-width:1280px;margin:56px auto 0;padding:0 40px 90px;">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:22px;">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);letter-spacing:-0.01em;color:var(--ink);">How the groups connect</span>
+      <span style="flex:1;height:1px;background:var(--hair);"></span>
+    </div>
+    <p style="font-size:16px;line-height:1.65;color:var(--ink2);max-width:74ch;margin:0 0 30px;">Our four groups are not silos — they form a single, tightly-coupled research loop. Foundational theory from Group 1 hardens the models the other groups rely on, perception and learning advances flow between Groups 2 and 3, and every thread converges on Group 4 explainable decision-making. Each arrow below is a concrete hand-off of methods and results between labs.</p>
+    <div style="border:1px solid var(--hair);border-radius:20px;background:var(--surface);padding:clamp(16px,2.5vw,32px);">
+      <img src="uploads/Connection.png" onerror="this.closest('div').style.display='none'" alt="Diagram of collaboration between CARAI's four research groups — trustworthy models and robust learning between Groups 1 and 2, multimodal detection and audio/action understanding, model reliability and domain-adaptive learning, few-shot data learning, scene understanding and anomaly detection, and detection and data generation." style="display:block;width:100%;height:auto;border-radius:10px;">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:30px;">
+      <div style="display:flex;gap:13px;align-items:flex-start;">
+        <span style="width:10px;height:10px;flex:none;border-radius:50%;background:#1668A0;margin-top:5px;"></span>
+        <div><div style="font:600 14.5px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:4px;">Group 1 → others</div><p style="font-size:13.5px;line-height:1.55;color:var(--ink2);margin:0;">Trustworthy models, robust learning, and model-reliability guarantees underpin every group.</p></div>
+      </div>
+      <div style="display:flex;gap:13px;align-items:flex-start;">
+        <span style="width:10px;height:10px;flex:none;border-radius:50%;background:#2E9E5B;margin-top:5px;"></span>
+        <div><div style="font:600 14.5px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:4px;">Group 2 ↔ 3</div><p style="font-size:13.5px;line-height:1.55;color:var(--ink2);margin:0;">Multimodal detection, audio &amp; action understanding, and domain-adaptive learning flow both ways.</p></div>
+      </div>
+      <div style="display:flex;gap:13px;align-items:flex-start;">
+        <span style="width:10px;height:10px;flex:none;border-radius:50%;background:#D0473D;margin-top:5px;"></span>
+        <div><div style="font:600 14.5px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:4px;">Group 3 → others</div><p style="font-size:13.5px;line-height:1.55;color:var(--ink2);margin:0;">Few-shot data learning, detection, and data generation feed perception and decision-making.</p></div>
+      </div>
+      <div style="display:flex;gap:13px;align-items:flex-start;">
+        <span style="width:10px;height:10px;flex:none;border-radius:50%;background:#8663C4;margin-top:5px;"></span>
+        <div><div style="font:600 14.5px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:4px;">Group 4 · convergence</div><p style="font-size:13.5px;line-height:1.55;color:var(--ink2);margin:0;">Scene understanding and anomaly detection converge into explainable decisions and recommendation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+      <img src="carai-logo.png" alt="CARAI" style="height:64px;width:auto;filter:brightness(0) invert(1);opacity:.9;">
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

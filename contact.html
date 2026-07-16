@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — CARAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="carai-i18n.js" defer></script>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:#faf8f3}
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(27,24,21,.12)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+.nav-link:hover{color:var(--accent) !important}
+.accent-link:hover{color:var(--accent) !important}
+.field:focus{border-color:var(--brand) !important}
+</style>
+</head>
+<body>
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#C4863A;--accent:#1668A0;--paper:#FAF8F3;--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><span data-lang="en" style="opacity:1;cursor:pointer;">EN</span><span style="opacity:.4;">·</span><span data-lang="ko" style="opacity:.55;cursor:pointer;">한국어</span><a href="publications.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- NAV with About dropdown -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="index.html#about" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="people.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="initiative.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="media.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="research.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Research</a>
+        <a href="groups.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Groups</a>
+        <a href="publications.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Publications</a>
+        <a href="contact.html" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">Contact</div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+      <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">Contact Us</h1>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;">Questions about our research, collaboration, or joining the team? Reach out — we'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- INFO + MAP -->
+  <section style="max-width:1280px;margin:20px auto 0;padding:0 40px;">
+    <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:26px;align-items:stretch;">
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;">
+          <span style="width:48px;height:48px;flex:none;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+          <div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;">Address</div><div style="font-size:15.5px;line-height:1.55;color:var(--ink);">335 Gwahak-ro (373-1 Guseong-dong)<br>Yuseong-gu, Daejeon 34141<br>Republic of Korea</div><div style="font:500 12.5px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:8px;">KAIST · School of Computing</div></div>
+        </div>
+        <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;">
+          <span style="width:48px;height:48px;flex:none;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span>
+          <div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;">Phone</div><a href="tel:+82423508351" class="accent-link" style="font-size:16px;color:var(--ink);text-decoration:none;">+82 42-350-8351</a></div>
+        </div>
+        <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;">
+          <span style="width:48px;height:48px;flex:none;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
+          <div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;">Email</div><a href="mailto:kaistcarai@gmail.com" class="accent-link" style="font-size:16px;color:var(--ink);text-decoration:none;">kaistcarai@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="lift" style="border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;min-height:420px;">
+        <iframe title="CARAI location map" src="https://maps.google.com/maps?ll=36.374101,127.36608&amp;q=KAIST&amp;z=16&amp;output=embed" style="border:0;width:100%;flex:1;min-height:340px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href="https://maps.google.com/?q=36.374101,127.36608" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;text-decoration:none;color:var(--ink);border-top:1px solid var(--hair);">
+          <span style="font:600 14px 'Public Sans',sans-serif;">Open in Google Maps</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section style="max-width:1280px;margin:44px auto 0;padding:0 40px 90px;">
+    <div style="background:var(--ink);border-radius:20px;padding:clamp(30px,5vw,56px);position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-90px;right:-70px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(62,154,214,.26),transparent 66%);"></div>
+      <div style="position:relative;display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start;">
+        <div>
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:18px;">Send a message</div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,34px);line-height:1.2;color:#F6F1E7;margin:0 0 14px;">Start a conversation</h2>
+          <p style="font-size:14.5px;line-height:1.6;color:#C9C1B2;margin:0;">Tell us a little about your inquiry and we'll get back to you.</p>
+        </div>
+        <form action="mailto:kaistcarai@gmail.com" method="post" enctype="text/plain" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <label style="display:flex;flex-direction:column;gap:7px;"><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#8A8177;">Name</span><input name="Name" required="" class="field" style="height:46px;border:1px solid #3A352E;background:#221F1A;border-radius:9px;padding:0 14px;color:#F6F1E7;font:400 14px 'Public Sans',sans-serif;outline:none;"></label>
+          <label style="display:flex;flex-direction:column;gap:7px;"><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#8A8177;">Email</span><input name="Email" type="email" required="" class="field" style="height:46px;border:1px solid #3A352E;background:#221F1A;border-radius:9px;padding:0 14px;color:#F6F1E7;font:400 14px 'Public Sans',sans-serif;outline:none;"></label>
+          <label style="display:flex;flex-direction:column;gap:7px;grid-column:1 / -1;"><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#8A8177;">Subject</span><input name="Subject" class="field" style="height:46px;border:1px solid #3A352E;background:#221F1A;border-radius:9px;padding:0 14px;color:#F6F1E7;font:400 14px 'Public Sans',sans-serif;outline:none;"></label>
+          <label style="display:flex;flex-direction:column;gap:7px;grid-column:1 / -1;"><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#8A8177;">Message</span><textarea name="Message" rows="4" required="" class="field" style="border:1px solid #3A352E;background:#221F1A;border-radius:9px;padding:12px 14px;color:#F6F1E7;font:400 14px 'Public Sans',sans-serif;outline:none;resize:vertical;"></textarea></label>
+          <button type="submit" style="grid-column:1 / -1;justify-self:start;height:50px;padding:0 28px;border:none;border-radius:9px;background:var(--brand);color:#06222E;font:600 15px 'Public Sans',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:9px;">Send message<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+      <img src="carai-logo.png" alt="CARAI" style="height:64px;width:auto;filter:brightness(0) invert(1);opacity:.9;">
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

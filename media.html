@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Coverage — CARAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="carai-i18n.js" defer></script>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:#faf8f3}
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(27,24,21,.12)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+.nav-link:hover{color:var(--accent) !important}
+.row-link:hover{background:var(--tint) !important}
+</style>
+</head>
+<body>
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#C4863A;--accent:#1668A0;--paper:#FAF8F3;--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><span data-lang="en" style="opacity:1;cursor:pointer;">EN</span><span style="opacity:.4;">·</span><span data-lang="ko" style="opacity:.55;cursor:pointer;">한국어</span><a href="publications.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- NAV with About dropdown -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="index.html#about" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="people.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="initiative.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="media.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="research.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Research</a>
+        <a href="groups.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Groups</a>
+        <a href="publications.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Publications</a>
+        <a href="contact.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">About · Media Coverage</div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+      <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">CARAI in the press</h1>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;">Coverage of our research, people, and events across science and technology media.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section style="max-width:1280px;margin:20px auto 0;padding:0 40px;">
+    <a href="https://www.mindlenews.com/news/articleView.html?idxno=20452" target="_blank" rel="noopener" class="lift" style="display:grid;grid-template-columns:1.1fr 1fr;gap:0;border:1px solid var(--hair);border-radius:18px;overflow:hidden;background:var(--surface);text-decoration:none;">
+      <div style="position:relative;min-height:280px;background:#0B3450;">
+        <img src="uploads/노용만 교수.png" alt="노용만 교수" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+        <span style="position:absolute;top:22px;left:24px;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(11,52,80,.55);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 12px;backdrop-filter:blur(4px);">Featured</span>
+      </div>
+      <div style="padding:40px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:14px;">민들레 · Mindle News · May 2026</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);line-height:1.2;letter-spacing:-0.01em;margin:0 0 16px;color:var(--ink);">KAIST 노용만 교수, 대통령 주재 제1회 미래국방전략위원회 참석</h2>
+        <p style="font-size:15.5px;line-height:1.65;color:var(--ink2);margin:0 0 22px;max-width:52ch;">"국방 기술 혁신에 우리나라 청년 인재들이 뛰어들 수 있도록 국가 차원의 국방 인공지능 생태계를 활성화해야 한다" — 국방 AI의 미래 전략을 논의하는 자리에서 구체적인 비전 제시</p>
+        <span style="color:var(--accent,#1668A0);font:600 14px 'Public Sans',sans-serif;display:inline-flex;align-items:center;gap:7px;">Read the article<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+      </div>
+    </a>
+  </section>
+
+  <!-- COVERAGE LIST -->
+  <section style="max-width:1280px;margin:0 auto;padding:52px 40px 90px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:26px;color:var(--ink);">All coverage</span>
+      <span style="flex:1;height:1px;background:var(--hair);"></span>
+    </div>
+    <a href="https://www.aitimes.kr/news/articleView.html?idxno=37392" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">인공지능신문 · AI Times</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Nov 2025</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST CARAI 최재식 교수팀, 의사결정 내부 구조 첫 시각화</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://www.etnews.com/20250711000110" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">전자신문 · ET News</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Jul 2025</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST CARAI 최정우 교수팀, 세계 최고 음향 AI 챌린지 1위 쾌거</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://www.yna.co.kr/view/AKR20240620076600063" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">연합뉴스 · Yonhap</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Jun 2024</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST CARAI 노용만 교수팀, GPT-4V 뛰어넘는 이미지 분석 대형언어모델 개발</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://www.news2day.co.kr/article/20231128500251?site_preference=normal" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">뉴스투데이 · News2day</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Nov 2023</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST CARAI 장동의 교수, 해군 R&amp;D 기술기획 협력 세미나 참여</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://m.science.ytn.co.kr/program/view.php?mcd=0082&amp;key=202211151639246586" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">YTN 사이언스</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Nov 2022</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST CARAI 노용만 교수팀, 딥러닝 적대적 공격 막는 방어 프레임 개발</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://kookbang.dema.mil.kr/newsWeb/20220720/11/ATCE_CTGR_0010010000/view.do" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">국방일보 · Defense Daily</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Jul 2022</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">미래국방 인공지능 특화연구센터, 설명가능 AI로 국방 난제에 도전</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://kookbang.dema.mil.kr/newsWeb/20220124/2/ATCE_CTGR_0010020000/view.do" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">국방일보 · Defense Daily</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Jan 2022</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">[국방TV] 기품원 연구원 전문성·역량 강화 국방 AI 교육</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://www.aitimes.kr/news/articleView.html?idxno=21465" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">인공지능신문 · AI Times</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Jun 2021</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST CARAI 최재식 교수팀, 딥러닝 생성모델의 오류 수정 기술 개발</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://www.chungnamilbo.co.kr/news/articleView.html?idxno=572276" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">충남일보</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Nov 2020</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST CARAI 노용만 교수 및 장동의 교수팀, 전장상황 자율비행 기술 경진대회 우승</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+    <a href="https://www.yna.co.kr/view/AKR20191221029100504" target="_blank" rel="noopener" class="row-link" style="display:grid;grid-template-columns:190px 1fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair);text-decoration:none;transition:background .15s;">
+      <div><span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 10px;">연합뉴스 · Yonhap</span><div style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:9px;">Dec 2019</div></div>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.3;margin:0;color:var(--ink);">KAIST, 미래국방인공지능특화연구센터(CARAI) 개소</h3>
+      <span style="color:var(--muted);display:inline-flex;align-items:center;gap:6px;font:600 13px 'Public Sans',sans-serif;white-space:nowrap;">Read<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+      <img src="carai-logo.png" alt="CARAI" style="height:64px;width:auto;filter:brightness(0) invert(1);opacity:.9;">
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

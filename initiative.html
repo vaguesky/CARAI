@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Initiative — CARAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="carai-i18n.js" defer></script>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:#faf8f3}
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(27,24,21,.12)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+.nav-link:hover{color:var(--accent) !important}
+</style>
+</head>
+<body>
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#C4863A;--accent:#1668A0;--paper:#FAF8F3;--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><span data-lang="en" style="opacity:1;cursor:pointer;">EN</span><span style="opacity:.4;">·</span><span data-lang="ko" style="opacity:.55;cursor:pointer;">한국어</span><a href="publications.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- NAV with About dropdown -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="index.html#about" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="people.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="initiative.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="media.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="research.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Research</a>
+        <a href="groups.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Groups</a>
+        <a href="publications.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Publications</a>
+        <a href="contact.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">About · Our Initiative</div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+      <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">AI you can understand, and therefore trust</h1>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;">CARAI exists to make artificial intelligence explainable by design — advancing the fundamentals while pursuing wide-reaching, human-centered applications.</p>
+    </div>
+  </section>
+
+  <!-- MISSION BAND -->
+  <section style="max-width:1280px;margin:20px auto 0;padding:0 40px;">
+    <div style="background:var(--ink);border-radius:20px;padding:clamp(36px,6vw,72px);position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-80px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(62,154,214,.28),transparent 66%);"></div>
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:22px;position:relative;">Our mission</div>
+      <p style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(24px,3.4vw,38px);line-height:1.34;letter-spacing:-0.01em;color:#F6F1E7;margin:0;max-width:24ch;position:relative;">Explainable AI provides reliable decision assistance for humans — pursuing the future of AI by developing its fundamentals while seeking advanced, wide-reaching applications.</p>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section style="max-width:1280px;margin:0 auto;padding:64px 40px 10px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:30px;">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:26px;color:var(--ink);">What we stand for</span>
+      <span style="flex:1;height:1px;background:var(--hair);"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;">
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;">
+        <div style="width:48px;height:48px;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+        <div style="font:600 18px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:8px;">Transparency</div>
+        <p style="font-size:14px;line-height:1.55;color:var(--ink2);margin:0;">Every prediction should come with a faithful, human-readable account of why.</p>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;">
+        <div style="width:48px;height:48px;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+        <div style="font:600 18px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:8px;">Trustworthiness</div>
+        <p style="font-size:14px;line-height:1.55;color:var(--ink2);margin:0;">Robust, calibrated models that behave reliably under real-world shift.</p>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;">
+        <div style="width:48px;height:48px;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></div>
+        <div style="font:600 18px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:8px;">Human-centered</div>
+        <p style="font-size:14px;line-height:1.55;color:var(--ink2);margin:0;">AI measured by the good it does for the people who rely on it.</p>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;">
+        <div style="width:48px;height:48px;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></div>
+        <div style="font:600 18px 'Public Sans',sans-serif;color:var(--ink);margin-bottom:8px;">Impact</div>
+        <p style="font-size:14px;line-height:1.55;color:var(--ink2);margin:0;">Foundational theory translated into deployable, wide-reaching applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOALS NUMBERS -->
+  <section style="max-width:1280px;margin:20px auto 0;padding:0 40px 90px;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);">
+      <div style="padding:26px 26px 26px 0;border-right:1px solid var(--hair);"><div style="font-family:'Newsreader',serif;font-size:38px;font-weight:500;color:var(--ink);">4</div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;">Research groups</div></div>
+      <div style="padding:26px;border-right:1px solid var(--hair);"><div style="font-family:'Newsreader',serif;font-size:38px;font-weight:500;color:var(--ink);">212</div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;">Papers</div></div>
+      <div style="padding:26px;border-right:1px solid var(--hair);"><div style="font-family:'Newsreader',serif;font-size:38px;font-weight:500;color:var(--ink);">250+</div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;">AI Researchers</div></div>
+      <div style="padding:26px 0 26px 26px;"><div style="font-family:'Newsreader',serif;font-size:38px;font-weight:500;color:var(--ink);">2019</div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;">Founded</div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+      <img src="carai-logo.png" alt="CARAI" style="height:64px;width:auto;filter:brightness(0) invert(1);opacity:.9;">
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
