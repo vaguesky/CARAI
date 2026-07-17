@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="carai-i18n.js" defer></script>
+<script src="responsive.js" defer></script>
 <style>
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
@@ -30,6 +31,7 @@ html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsrea
 .footer-link:hover{color:#fff !important}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}.heroFrame{animation:none!important}}
 </style>
+<link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 
@@ -55,7 +57,7 @@ html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsrea
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav id="siteNav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="#about" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -70,6 +72,7 @@ html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsrea
         <a href="contact.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Contact</a>
         <div class="icon-btn" style="width:34px;height:34px;border:1px solid var(--hair);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink2);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6"></circle><path d="M20 20l-4-4"></path></svg></div>
       </nav>
+      <button type="button" class="hamburger" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span></button>
     </div>
   </header>
 
@@ -77,7 +80,7 @@ html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsrea
 
   <!-- ===== HERO ===== -->
   <section style="position:relative;">
-    <div style="height:560px;position:relative;overflow:hidden;background:#141210;">
+    <div style="min-height:560px;position:relative;overflow:hidden;background:#141210;">
       <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:1;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 22% 25%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(196,134,58,.18),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#E7DECF,#E7DECF 12px,#DDD3C1 12px,#DDD3C1 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 0s infinite both;"></div>
       <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 72% 30%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(62,154,214,.22),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#D8E4EC,#D8E4EC 12px,#C6D8E4 12px,#C6D8E4 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 7s infinite both;"></div>
       <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 42% 62%,rgba(255,255,255,.10),transparent 55%),linear-gradient(120deg,rgba(150,96,60,.22),rgba(20,18,15,.10)),repeating-linear-gradient(135deg,#E4D9C8,#E4D9C8 12px,#D8CBB6 12px,#D8CBB6 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 14s infinite both;"></div>

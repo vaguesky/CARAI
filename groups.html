@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="carai-i18n.js" defer></script>
+<script src="responsive.js" defer></script>
 <style>
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
@@ -24,6 +25,7 @@ html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsrea
 @media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
 .nav-link:hover{color:var(--accent) !important}
 </style>
+<link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 <div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#2E9E5B;--accent:#1668A0;--paper:#FAF8F3;--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
@@ -46,7 +48,7 @@ html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsrea
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav id="siteNav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="index.html#about" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -60,6 +62,7 @@ html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsrea
         <a href="publications.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Publications</a>
         <a href="contact.html" class="nav-link" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;">Contact</a>
       </nav>
+      <button type="button" class="hamburger" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span></button>
     </div>
   </header>
 

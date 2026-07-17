@@ -1,0 +1,235 @@
+/* ==========================================================================
+   CARAI — shared responsive layer
+   Loaded on every page AFTER the page's own <style> block so its rules win
+   the cascade; !important is used only where an inline style="" attribute
+   on the original markup would otherwise out-rank a plain override.
+   Breakpoints: Desktop >1024px · Tablet 769–1024px · Mobile 481–768px · Small mobile ≤480px
+   ========================================================================== */
+
+/* ---- global safety net (does not hide bugs — see per-component fixes below) ----
+   Horizontal-overflow clipping already lives on the page's root wrapper <div>
+   (auto-height, so it's immune to the quirk below). Do NOT also set
+   overflow-x on html/body: both already have height:100% from each page's
+   own <style> block, and setting overflow-x (without overflow-y) on an
+   element forces its computed overflow-y from 'visible' to 'auto' per spec —
+   which turns body into its own viewport-height scroll container, completely
+   detached from window/anchor scrolling. Confirmed while testing: it broke
+   window.scrollTo and made full-page screenshots render blank below the fold. */
+html, body { max-width: 100%; }
+img, video, iframe, svg { max-width: 100%; }
+/* Prevents grid/flex children from refusing to shrink below their intrinsic
+   content size — the root cause of most horizontal overflow on this site. */
+*, *::before, *::after { min-width: 0; }
+input, textarea, select, button { min-width: 0; max-width: 100%; }
+
+/* ---- hamburger button (built, hidden by default; shown ≤1024px) ---- */
+.hamburger {
+  display: none;
+  width: 44px; height: 44px;
+  border: 1px solid var(--hair, #E6E0D6);
+  border-radius: 8px;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: none;
+  padding: 0;
+  position: relative;
+  z-index: 41;
+}
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ink, #1B1815);
+  position: relative;
+  transition: transform .2s ease, opacity .2s ease, top .2s ease;
+}
+.hamburger span::before { position: absolute; top: -6px; left: 0; }
+.hamburger span::after  { position: absolute; top: 6px; left: 0; }
+.hamburger[aria-expanded="true"] span { background: transparent; }
+.hamburger[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+.hamburger[aria-expanded="true"] span::after  { top: 0; transform: rotate(-45deg); }
+
+/* ==========================================================================
+   TABLET  (≤1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+
+  /* -- nav becomes a hamburger-triggered dropdown -- */
+  .hamburger { display: flex; }
+
+  nav#siteNav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper, #FAF8F3);
+    border-bottom: 1px solid var(--hair, #E6E0D6);
+    box-shadow: 0 20px 40px rgba(27, 24, 21, .14);
+    padding: 4px 24px 20px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height .25s ease, opacity .2s ease;
+    z-index: 39;
+  }
+  nav#siteNav.nav-open {
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav#siteNav .nav-dd { display: block; width: 100%; }
+  nav#siteNav .nav-dd > a.nav-link,
+  nav#siteNav .nav-dd > a:not(.nav-dd__item) {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--hair, #E6E0D6);
+    justify-content: space-between;
+    display: flex !important;
+  }
+  nav#siteNav > a.nav-link,
+  nav#siteNav > a[style*="border-bottom:2px solid"] {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--hair, #E6E0D6);
+    display: block;
+  }
+  nav#siteNav .nav-dd__menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    min-width: 0 !important;
+    width: 100%;
+    padding: 4px 0 10px 14px !important;
+    transition: none !important;
+  }
+  nav#siteNav .nav-dd__menu::before { display: none; }
+  nav#siteNav .icon-btn { margin: 14px 0 4px; align-self: flex-start; }
+
+  /* -- four-across strips become two-across -- */
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+  [style*="grid-template-columns:1.7fr 1fr 1fr 1fr"] { grid-template-columns: repeat(2, 1fr) !important; gap: 32px !important; }
+
+  /* -- fixed-pixel sidebar columns shrink instead of forcing overflow -- */
+  [style*="grid-template-columns:300px 1fr"] { grid-template-columns: 220px 1fr !important; gap: 28px !important; }
+  [style*="grid-template-columns:340px 1fr"] { grid-template-columns: 260px 1fr !important; }
+}
+
+/* ==========================================================================
+   MOBILE  (≤768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  .hamburger { width: 44px; height: 44px; }
+
+  /* -- utility bar: tighten padding so EN/KO + Publications link never wrap oddly -- */
+  body > div > div:first-child [style*="height:38px"] { padding: 0 18px !important; }
+  body > div > div:first-child [style*="font:500 11.5px"] { gap: 12px !important; }
+  [data-lang] { padding: 6px 4px; display: inline-block; }
+
+  /* -- header row: tighter side padding -- */
+  header [style*="height:76px"] { padding: 0 18px !important; }
+
+  /* -- search icon in nav: bump to a real touch target -- */
+  [style*="width:34px;height:34px;border:1px solid var(--hair);border-radius:8px"] {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* -- section padding: desktop 92px/80px verticals are excessive on phones -- */
+  section[style*="padding:92px 40px"] { padding: 48px 20px !important; }
+  section[style*="padding:80px 40px 30px"] { padding: 44px 20px 20px !important; }
+  section[style*="padding:96px 40px"] { padding: 52px 20px !important; }
+  [style*="max-width:1280px;margin:0 auto;padding:0 40px"] { padding: 0 20px !important; }
+  [style*="max-width:1280px;margin:20px auto 0;padding:0 40px"] { padding: 0 20px !important; }
+  [style*="max-width:1280px;margin:0 auto;padding:52px 40px 90px"] { padding: 32px 20px 60px !important; }
+  [style*="max-width:1280px;margin:44px auto 0;padding:0 40px 90px"] { padding: 0 20px 56px !important; margin-top: 28px !important; }
+  [style*="max-width:960px;margin:0 auto;padding:96px 40px"] { padding: 52px 20px !important; }
+  [style*="max-width:1280px;margin:0 auto;padding:60px 40px 40px"] { padding: 40px 20px !important; }
+  [style*="max-width:1280px;margin:0 auto;padding:24px 40px"] { padding: 18px 20px !important; }
+
+  /* -- hero: stop forcing a fixed height and a >viewport 2nd column -- */
+  [style*="height:560px;position:relative;overflow:hidden;background:#141210"] {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  [style*="grid-template-columns:minmax(0,1fr) 300px"] {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    padding: 56px 20px 32px !important;
+    gap: 26px !important;
+    align-items: stretch !important;
+  }
+
+  /* -- carousel slides: stack image over text, drop the forced min-height/padding -- */
+  [style*="grid-template-columns:1.08fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="min-height:350px"] { min-height: 0 !important; }
+  [style*="padding:52px 48px"] { padding: 28px 24px !important; }
+  #groupsTrack article > div:first-child { aspect-ratio: 4 / 3; }
+
+  /* -- generic two-column content sections stack to one column -- */
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 28px !important; }
+  [style*="grid-template-columns:1.4fr 1fr"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+  [style*="grid-template-columns:1.3fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+  [style*="grid-template-columns:1fr 1.3fr"] { grid-template-columns: 1fr !important; gap: 28px !important; }
+  [style*="grid-template-columns:1fr 1.15fr"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+  [style*="grid-template-columns:1.1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:300px 1fr"] { grid-template-columns: 1fr !important; gap: 22px !important; }
+  [style*="grid-template-columns:340px 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="min-height:300px"] { min-height: 0 !important; aspect-ratio: 4 / 3 !important; height: auto !important; }
+
+  /* -- footer: single column -- */
+  [style*="grid-template-columns:1.7fr 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+  /* -- publication rows / media coverage rows: stack, keep link+badge row tidy -- */
+  .pub-row { grid-template-columns: 1fr !important; gap: 12px !important; padding: 18px 0 !important; }
+  .pub-row > div:last-child {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100%;
+  }
+  .row-link { grid-template-columns: 1fr !important; gap: 10px !important; }
+
+  /* -- contact form: Name/Email stack -- */
+  form[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+  /* -- four-across strips: two-up, drop the vertical dividers that no longer align -- */
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; row-gap: 20px !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] > * { border-right: none !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] > *:nth-child(odd) { border-right: 1px solid var(--hair, #E6E0D6) !important; padding-right: 18px !important; padding-left: 0 !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] > *:nth-child(even) { padding-left: 18px !important; }
+}
+
+/* ==========================================================================
+   SMALL MOBILE  (≤480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] > * { border-right: none !important; padding-left: 0 !important; padding-right: 0 !important; border-bottom: 1px solid var(--hair, #E6E0D6); padding-bottom: 16px !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] > *:last-child { border-bottom: none; }
+
+  header [style*="height:76px"] { padding: 0 14px !important; }
+  body > div > div:first-child [style*="height:38px"] { padding: 0 14px !important; }
+  section[style*="padding:92px 40px"],
+  section[style*="padding:96px 40px"] { padding: 36px 14px !important; }
+  [style*="max-width:1280px;margin:0 auto;padding:0 40px"] { padding: 0 14px !important; }
+  [style*="max-width:1280px;margin:20px auto 0;padding:0 40px"] { padding: 0 14px !important; }
+
+  [style*="grid-template-columns:minmax(0,1fr) 300px"] { padding: 44px 14px 26px !important; }
+  [style*="padding:52px 48px"] { padding: 22px 18px !important; }
+}
