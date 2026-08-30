@@ -185,11 +185,26 @@ html.lang-ko, html.lang-ko * { word-break: keep-all; overflow-wrap: break-word; 
      number and title now start at the same y-position in all four cards
      regardless of how many lines any one title wraps to. Korean line
      breaks are handled by the site-wide `html.lang-ko word-break:keep-all`
-     rule above, so a title only wraps at a word boundary. */
+     rule above, so a title only wraps at a word boundary.
+
+     A second, separate bug survived that first pass: each item's desktop
+     padding was tuned for a single 4-across row (item 1 has no left padding
+     as the row's left edge; items 2 and 3 both carry 26px on both sides as
+     "middle" items; item 4 has no right padding as the row's right edge).
+     Once the strip is 2 columns, item 1 (0px left) and item 3 (26px left)
+     land in the SAME left column but no longer share a left inset, so
+     group 03's number+title sit 26px to the right of group 01's directly
+     above it — not intrinsic-width centering, just inherited desktop
+     padding that assumed a row position group 03 no longer has. Item 2 and
+     item 4 (both 26px left) happen to already agree with each other, which
+     is why the right column looked fine. Every cell gets the same padding
+     here so both columns share one consistent left inset regardless of
+     desktop row position. */
   .carai-strip-item {
     display: grid !important;
     grid-template-columns: 36px minmax(0, 1fr) !important;
     align-items: start !important;
+    padding: 14px 20px !important;
   }
 
   /* Home research-groups carousel card: image + copy */
