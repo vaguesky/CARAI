@@ -8,6 +8,7 @@
 
 /* ---------- universal safety ---------- */
 img, video, iframe { max-width: 100%; }
+html, body { max-width: 100%; overflow-x: hidden; }
 
 /* ---------- ≤1024px: fix fixed-px text boxes so they never overflow ----------
    A few headings/paragraphs carry leftover explicit width/height from the
@@ -23,7 +24,8 @@ img, video, iframe { max-width: 100%; }
   }
 }
 
-/* ---------- ≤900px: tablet — stack two/four-column layouts, trim gutters ---------- */
+/* ---------- ≤900px: tablet — stack two/four-column layouts, trim gutters,
+   and make the header safe wherever the 7-item nav no longer fits ---------- */
 @media (max-width: 900px) {
   /* narrower side gutters on every 1280px content wrapper */
   [style*="max-width:1280px"],
@@ -35,6 +37,40 @@ img, video, iframe { max-width: 100%; }
   [style*="max-width:1040px"] {
     padding-left: 24px !important;
     padding-right: 24px !important;
+  }
+
+  /* primary nav: let the link row wrap under the logo instead of
+     overflowing off-screen once the 7 items no longer fit one line */
+  header div[style*="height:76px"] {
+    height: auto !important;
+    min-height: 76px;
+    flex-wrap: wrap !important;
+    row-gap: 10px;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+  header nav[style*="gap:28px"] {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    row-gap: 10px !important;
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  /* the "About" dropdown menu should never run off the edge of the screen */
+  .nav-dd__menu {
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+    min-width: 240px !important;
+    max-width: 88vw !important;
+  }
+
+  /* Publications: the sticky filter bar is pinned to the old fixed 76px
+     header height; once the header wraps to multiple lines above it would
+     overlap, so let it scroll with the page instead */
+  section[style*="position:sticky;top:76px"] {
+    position: static !important;
   }
 
   /* page-header title + intro paragraph (People/Initiative/Research/Groups/Media/Publications/Contact) */
@@ -97,7 +133,7 @@ img, video, iframe { max-width: 100%; }
     grid-template-columns: 1fr !important;
   }
 
-  /* Home footer: logo column + 3 link columns */
+  /* Home/Publications footer: logo column + 3 link columns */
   [style*="grid-template-columns:1.7fr 1fr 1fr 1fr"] {
     grid-template-columns: 1fr 1fr !important;
     row-gap: 28px !important;
@@ -109,17 +145,20 @@ img, video, iframe { max-width: 100%; }
     gap: 20px !important;
   }
 
-  /* Media / Publications list rows: venue+date | title | link+org */
-  a[style*="grid-template-columns:190px 1fr auto"] {
+  /* Media list rows (<a>, 190px 1fr auto) and Publications list rows
+     (<article>, 160px 1fr auto) — venue/date | title | link/org */
+  [style*="grid-template-columns:190px 1fr auto"],
+  [style*="grid-template-columns:160px 1fr auto"] {
     grid-template-columns: 1fr !important;
     row-gap: 10px !important;
   }
-  a[style*="grid-template-columns:190px 1fr auto"] > :last-child {
+  [style*="grid-template-columns:190px 1fr auto"] > :last-child,
+  [style*="grid-template-columns:160px 1fr auto"] > :last-child {
     justify-self: start !important;
   }
 }
 
-/* ---------- ≤640px: phone ---------- */
+/* ---------- ≤640px: phone-only refinements ---------- */
 @media (max-width: 640px) {
   [style*="max-width:1280px"],
   [style*="max-width: 1280px"],
@@ -129,30 +168,8 @@ img, video, iframe { max-width: 100%; }
     padding-right: 18px !important;
   }
 
-  /* primary nav: allow the link row to wrap under the logo instead of
-     overflowing off-screen */
-  header div[style*="height:76px"] {
-    height: auto !important;
-    min-height: 76px;
-    flex-wrap: wrap !important;
-    row-gap: 10px;
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
-  }
   header nav[style*="gap:28px"] {
-    gap: 14px !important;
-    row-gap: 10px !important;
-    width: 100%;
-    justify-content: flex-start !important;
-  }
-
-  /* the "About" dropdown menu should never run off the edge of the screen */
-  .nav-dd__menu {
-    left: auto !important;
-    right: 0 !important;
-    transform: none !important;
-    min-width: 240px !important;
-    max-width: 88vw !important;
+    gap: 12px !important;
   }
 
   /* Home hero: let the stacked heading/CTA/card content grow instead of
