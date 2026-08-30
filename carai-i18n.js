@@ -17,8 +17,6 @@
     'About': '소개',
     'Research': '연구',
     'Groups': '연구그룹',
-    'Publications': '연구성과',
-    'Contact': '연락처',
     'People': '구성원',
     'Our Initiative': '설립 취지',
     'Media Coverage': '언론 보도',
@@ -33,18 +31,13 @@
     'Explainable AI for reliable human–AI decisions.': '신뢰할 수 있는 인간-AI 의사결정을 위한 설명가능 인공지능.',
     'Explainable AI for reliable human–AI decisions.': '신뢰할 수 있는 인간-AI 의사결정을 위한 설명가능 인공지능.',
     'Building robust and trustworthy AI — developing the fundamentals of the technology while pursuing its advanced, wide-reaching applications.': '견고하고 신뢰할 수 있는 AI 구축 — 기술의 기초를 발전시키는 동시에 광범위한 응용을 추구합니다.',
-    'Explore research': '연구 살펴보기',
     'Four research groups': '4개 연구그룹',
 
     // ---- common CTAs / links ----
-    'Learn more': '자세히 보기',
     'Read the report': '보고서 읽기',
     'Read the article': '기사 읽기',
     'Read': '보기',
     'More on research': '연구 더 보기',
-    'About the center': '센터 소개',
-    'Browse all publications': '전체 연구성과 보기',
-    'Get in touch': '문의하기',
     'Homepage': '홈페이지',
     'Join the team': '함께하기',
     'All news': '전체 소식',
@@ -53,7 +46,6 @@
     // ---- section eyebrows / titles ----
     'Research Groups': '연구그룹',
     'Research Output': '연구 성과',
-    'Our mission': '우리의 미션',
     'Mission': '미션',
     'Leadership': '리더십',
     'Principal Investigators': '실장책임연구원',
@@ -93,10 +85,6 @@
     'Latest at CARAI': 'CARAI 소식',
 
     // ---- group labels ----
-    'Group 01 · Theory': '그룹 01 · 이론',
-    'Group 02 · Multimodality': '그룹 02 · 멀티모달',
-    'Group 03 · In-context Learning': '그룹 03 · 인컨텍스트 학습',
-    'Group 04 · Decision Support': '그룹 04 · 의사결정 지원',
     'Explainable AI Theory': '설명가능 AI 이론',
     'Multimodal Learning & Detection': '멀티모달 학습 및 탐지',
     'Multimodal Learning & Detection': '멀티모달 학습 및 탐지',
@@ -118,10 +106,6 @@
     'Applying explainable AI to real decision-making and recommendation systems.': '설명가능 AI를 실제 의사결정 및 추천 시스템에 적용합니다.',
     '"Researchers of CARAI pursue the future of AI by developing the fundamentals of AI technology while seeking advanced and wide-reaching applications of AI."': '"CARAI의 연구진은 AI 기술의 기초를 발전시키는 동시에 광범위한 응용을 추구하며 AI의 미래를 열어갑니다."',
     'Globally competitive research excellence from across CARAI Center’s four groups, spanning both the theory and applications of explainable and trustworthy AI, demonstrated through publications in Top-tier AI conferences recognized by researchers worldwide, including CVPR, ICML, ICLR, AAAI, ICCV, NeurIPS, and so on.': 'CARAI 센터 4개 연구그룹의 세계적 수준의 연구 역량으로, 설명가능하고 신뢰할 수 있는 AI의 이론과 응용을 아우르며 CVPR, ICML, ICLR, AAAI, ICCV, NeurIPS 등 전 세계 연구자들이 인정하는 최상위 AI 학회 논문으로 입증됩니다.',
-    'Explainable AI': '설명가능 AI',
-    'Multimodal Learning': '멀티모달 학습',
-    'Few-shot Learning': '소량학습(Few-shot)',
-    'Recommendation': '추천',
     '335 Gwahak-ro (373-1 Guseong-dong)': '335 과학로 (373-1 구성동)',
     'Yuseong-gu, Daejeon': '대전광역시 유성구',
     'Yuseong-gu, Daejeon 34141': '대전광역시 유성구 34141',
@@ -194,22 +178,15 @@
     'XAI Theory': 'XAI 이론',
     'Explainable AI (XAI) Theory': '설명가능 AI(XAI) 이론',
     'Foundational research on the learning, inference, and result-explanation of state-of-the-art deep neural networks for practical, real-world use.': '실제 활용을 위한 최첨단 심층신경망의 학습·추론·결과 설명에 관한 기초 연구.',
-    'Multimodality': '멀티모달',
     'Fusion learning and recognition across the diverse sensor information — audio, visual, and more — commonly used across industrial fields.': '산업 전반에서 널리 쓰이는 음향·영상 등 다양한 센서 정보를 아우르는 융합 학습과 인식.',
-    'In-context Learning': '인컨텍스트 학습',
     'Few-shot Learning in Wild': '실환경 소량학습',
     'Explainable learning where training data is scarce or absent in adverse, real-world industrial environments.': '열악한 실제 산업 환경에서 학습 데이터가 부족하거나 없는 상황의 설명가능 학습.',
-    'Decision Support': '의사결정 지원',
     'Situation awareness, key-content extraction, report generation, complex decision-making, and expert interaction in complex scenarios.': '복잡한 상황에서의 상황 인식, 핵심 내용 추출, 리포트 생성, 복합 의사결정, 전문가 상호작용.',
     'Industrial Impact': '산업적 임팩트',
     'Industrial Utilization of AI Results': 'AI 성과의 산업적 활용',
     'Developing and transferring core AI technologies — XAI theory, multimodal fusion learning, few-shot learning, and decision support — to industry for practical application and national economic impact.': '핵심 AI 기술 — XAI 이론, 멀티모달 융합 학습, 소량학습, 의사결정 지원 — 을 개발하고 산업에 이전하여 실질적 활용과 국가 경제적 파급효과를 창출합니다.',
     // ---- groups ----
     'CARAI advances explainable, trustworthy AI through four coordinated research laboratories — from foundational theory to real-world decision support.': 'CARAI는 기초 이론부터 실환경 의사결정 지원까지, 유기적으로 협력하는 4개 연구실을 통해 설명가능하고 신뢰할 수 있는 AI를 발전시킵니다.',
-    '01 · Theory': '01 · 이론',
-    '02 · Multimodality': '02 · 멀티모달',
-    '03 · In-context Learning': '03 · 인컨텍스트 학습',
-    '04 · Decision Support': '04 · 의사결정 지원',
     'Objectives': '목표',
     'Understanding, certifying, and automating the reasoning of deep models.': '심층 모델의 추론을 이해하고 검증하며 자동화합니다.',
     'Recognition and detection across voice, vision, and diverse sensors.': '음성·영상 등 다양한 센서를 아우르는 인식과 탐지.',
@@ -321,7 +298,6 @@
   function setLang(lang) {
     lang = lang === 'ko' ? 'ko' : 'en';
     apply(lang);
-    setLangStore(lang);
   }
 
   function bind() {
@@ -338,7 +314,7 @@
 
   function init() {
     bind();
-    apply(getLang());
+    apply('ko'); // every page starts in Korean by default
   }
 
   window.CARAI_setLang = setLang;
@@ -348,4 +324,7 @@
   } else {
     init();
   }
+  // DC pages stream in; re-apply shortly after load to catch late nodes
+  setTimeout(init, 400);
+  setTimeout(init, 1200);
 })();

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+</style>
+<script src="carai-i18n.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#faf8f3}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(27,24,21,.12)}
+#fieldTrack::-webkit-scrollbar{display:none}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+</style>
+</helmet>
+
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#C4863A;--accent:{{accent}};--paper:{{paper}};--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><a href="CARAI Publications.dc.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- NAV with About dropdown -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="CARAI Home.dc.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="CARAI Home.dc.html#about" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;" style-hover="color:var(--accent);">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="CARAI People.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="CARAI Initiative.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="CARAI Media.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="CARAI Research.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Research</a>
+        <a href="CARAI Groups.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Groups</a>
+        <a href="CARAI Publications.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">연구성과</a>
+        <a href="CARAI Application.dc.html" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;">연구응용</a>
+        <a href="CARAI Contact.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="background:#08111a;">
+    <div style="max-width:1280px;margin:0 auto;padding:88px 40px 76px;position:relative;">
+      <div style="position:absolute;top:-40px;right:0;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(62,154,214,.16),transparent 66%);pointer-events:none;"></div>
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#3E9AD6;margin-bottom:24px;position:relative;">응용처 · Defense Applications</div>
+      <h1 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(36px,5vw,60px); line-height: 1.06; letter-spacing: -0.02em; color: #F2F6FA; margin: 0 0 20px; max-width: 22ch; position: relative; width: 1012px; height: 148px">국방응용: 미래 전장의 판단을 더 빠르고, 더 신뢰할 수 있게</h1>
+      <p style="font-size: 17px; line-height: 1.7; color: #9DAAB9; max-width: 74ch; margin: 0 0 18px; position: relative; width: 770px; height: 87px">CARAI는 설명가능 인공지능, 다종센서 융합, 극소량 데이터 학습 및 의사결정 인공지능 기술을 바탕으로 감시·정찰에서 상황인지, 지휘관 의사결정 지원까지 연결되는 미래 국방 AI기술을 연구합니다.</p>
+      <p style="font-size: 15.5px; line-height: 1.7; color: #7d8b9c; max-width: 74ch; margin: 0 0 34px; position: relative; width: 626px; height: 74px">복잡하고 불확실한 전장환경에서 AI가 단순히 높은 정확도를 내는 것을 넘어, 다양한 센서 정보를 이해하고 제한된 데이터에서도 학습하며 판단의 근거를 설명하고 인간의 의사결정을 지원하는 것이 CARAI가 지향하는 국방 AI입니다.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0;align-items:center;position:relative;border:1px solid #1e2a38;border-radius:12px;overflow:hidden;background:#0d1620;"><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">SENSE</div></div><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">UNDERSTAND</div></div><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">DECIDE</div></div><div style="flex:1;min-width:130px;padding:22px 24px;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#3E9AD6;">ACT</div></div></div>
+    </div>
+  </section>
+
+  <!-- MAIN DIAGRAM -->
+  <section style="background:#08111a;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px 76px;">
+      <div style="border:1px solid #1e2a38;border-radius:18px;overflow:hidden;background:#F4F7FA;">
+        <img src="uploads/pasted-1788100027656-0.png" alt="CARAI 국방 AI 연구 개요도 — 군사적 설명가능 인공지능, 다종 국방 데이터 융합 학습·탐지, 극소량 국방 데이터 기반 학습, 탐지 군사적 설명 연동 방책추천 연구가 감시·정찰 전장 시나리오로 연결되는 구성" style="display:block;width:100%;height:auto;">
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:baseline;margin-top:18px;">
+        <div style="font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#7d8b9c;">CARAI Defense AI Research Overview</div>
+        <div style="font-size:14px;color:#9DAAB9;">감시·정찰부터 지휘·통제까지, 4개 연구 축이 하나의 전장 시나리오로 연결됩니다 — 빠른 판단과 신속한 대응.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section style="background:#08111a;">
+    <div style="max-width:1280px;margin:0 auto;padding:20px 40px 80px;">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#3E9AD6;margin-bottom:8px;">Where CARAI AI Works</div>
+    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#3E9AD6;margin-bottom:16px;">01</div>
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">Intelligent Surveillance &amp; Reconnaissance</div>
+        <div style="font:600 20px 'Public Sans',sans-serif;color:#F2F6FA;">감시·정찰</div>
+      </div>
+      <div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.24;letter-spacing:-0.01em;margin:0 0 16px;color:#F2F6FA;">전장을 보고, 이상을 탐지하고, 상황을 이해하는 AI</h3>
+        <p style="font-size:15.5px;line-height:1.72;color:#9DAAB9;margin:0 0 22px;max-width:70ch;">미래 감시·정찰 환경에서는 단순한 표적 탐지를 넘어 다양한 환경 변화와 상황의 맥락까지 이해해야 합니다. CARAI는 영상 기반 장면이해 및 인과관계 추론, AI 모델의 신뢰성 평가, 적대적 공격에 강인한 학습, 환경 변화에 적응하는 온라인 학습 기술을 연구했습니다.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;"><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#3E9AD6;border:1px solid #3E9AD655;border-radius:999px;padding:5px 11px;">Scene Understanding</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#3E9AD6;border:1px solid #3E9AD655;border-radius:999px;padding:5px 11px;">Anomaly Detection</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#3E9AD6;border:1px solid #3E9AD655;border-radius:999px;padding:5px 11px;">Causal Reasoning</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#3E9AD6;border:1px solid #3E9AD655;border-radius:999px;padding:5px 11px;">Robust AI</span></div>
+        <div style="border-left:2px solid #3E9AD6;padding-left:16px;font:500 13.5px 'IBM Plex Mono',monospace;color:#B7C3D0;line-height:1.6;">감시·정찰 → 표적/이상상황 탐지 → 상황 이해 → 신뢰성 있는 정보 제공</div>
+      </div>
+    </article>
+    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#2E9E5B;margin-bottom:16px;">02</div>
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">Multi-Sensor Battlefield Intelligence</div>
+        <div style="font:600 20px 'Public Sans',sans-serif;color:#F2F6FA;">다종센서 기반 전장 인식</div>
+      </div>
+      <div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.24;letter-spacing:-0.01em;margin:0 0 16px;color:#F2F6FA;">하나의 센서가 놓치는 전장을 여러 센서가 함께 이해합니다</h3>
+        <p style="font-size:15.5px;line-height:1.72;color:#9DAAB9;margin:0 0 22px;max-width:70ch;">실제 전장에서는 주·야간, 악천후, 산악·산림 등 다양한 환경에서 RGB 영상만으로 충분한 정보를 확보하기 어렵습니다. CARAI는 EO·IR·LiDAR·초분광·음향 등 다양한 국방 데이터를 융합하여 표적을 탐지·추적하고 병사와 부대의 행동을 이해하는 AI 기술을 연구했습니다.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;"><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#2E9E5B;border:1px solid #2E9E5B55;border-radius:999px;padding:5px 11px;">EO</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#2E9E5B;border:1px solid #2E9E5B55;border-radius:999px;padding:5px 11px;">IR</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#2E9E5B;border:1px solid #2E9E5B55;border-radius:999px;padding:5px 11px;">LiDAR</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#2E9E5B;border:1px solid #2E9E5B55;border-radius:999px;padding:5px 11px;">Hyperspectral</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#2E9E5B;border:1px solid #2E9E5B55;border-radius:999px;padding:5px 11px;">Audio</span></div>
+        <div style="border-left:2px solid #2E9E5B;padding-left:16px;font:500 13.5px 'IBM Plex Mono',monospace;color:#B7C3D0;line-height:1.6;">주간 EO + 야간 IR + 거리정보 + 음향정보 → 표적·주변 상황 인식 → 단일 센서 한계 보완</div>
+      </div>
+    </article>
+    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#D0473D;margin-bottom:16px;">03</div>
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">AI with Limited Defense Data</div>
+        <div style="font:600 20px 'Public Sans',sans-serif;color:#F2F6FA;">데이터가 부족한 전장환경</div>
+      </div>
+      <div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.24;letter-spacing:-0.01em;margin:0 0 16px;color:#F2F6FA;">많은 데이터를 확보하기 어려운 국방환경에서도 학습하는 AI</h3>
+        <p style="font-size:15.5px;line-height:1.72;color:#9DAAB9;margin:0 0 22px;max-width:70ch;">국방 데이터는 보안, 비용, 희귀 상황 등의 이유로 일반 산업 데이터처럼 대량으로 확보하기 어렵습니다. CARAI는 극소량 데이터 학습, 능동학습, 비지도 데이터 생성·증강, 강화학습 기반 감시·정찰 기술을 연구했습니다.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;"><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#D0473D;border:1px solid #D0473D55;border-radius:999px;padding:5px 11px;">Few-shot Learning</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#D0473D;border:1px solid #D0473D55;border-radius:999px;padding:5px 11px;">Active Learning</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#D0473D;border:1px solid #D0473D55;border-radius:999px;padding:5px 11px;">Data Generation</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#D0473D;border:1px solid #D0473D55;border-radius:999px;padding:5px 11px;">Reinforcement Learning</span></div>
+        <div style="border-left:2px solid #D0473D;padding-left:16px;font:500 13.5px 'IBM Plex Mono',monospace;color:#B7C3D0;line-height:1.6;">적은 사례로부터 학습 · 필요한 데이터를 선택적으로 학습 · 부족한 전장 데이터를 생성·증강</div>
+      </div>
+    </article>
+    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#8663C4;margin-bottom:16px;">04</div>
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">AI-Assisted Command &amp; Decision Making</div>
+        <div style="font:600 20px 'Public Sans',sans-serif;color:#F2F6FA;">지휘·통제 및 방책추천</div>
+      </div>
+      <div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.24;letter-spacing:-0.01em;margin:0 0 16px;color:#F2F6FA;">탐지에서 끝나지 않고, 지휘관의 판단까지 지원합니다</h3>
+        <p style="font-size:15.5px;line-height:1.72;color:#9DAAB9;margin:0 0 22px;max-width:70ch;">CARAI 국방 AI 연구의 최종 지향점은 AI가 전장상황을 인식하는 것에서 끝나는 것이 아니라, 상황을 설명하고 가능한 행동을 분석하여 인간의 의사결정을 지원하는 것입니다. 상황인식 기반 보고문장 생성, 전장상황 기반 의사결정 지원, 결과예측 기반 설명가능 방책 선정 및 설명가능 강화학습을 연구했습니다.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;"><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8663C4;border:1px solid #8663C455;border-radius:999px;padding:5px 11px;">Report Generation</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8663C4;border:1px solid #8663C455;border-radius:999px;padding:5px 11px;">Decision Support</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8663C4;border:1px solid #8663C455;border-radius:999px;padding:5px 11px;">Explainable COA</span><span style="display:inline-block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8663C4;border:1px solid #8663C455;border-radius:999px;padding:5px 11px;">Explainable RL</span></div>
+        <div style="border-left:2px solid #8663C4;padding-left:16px;font:500 13.5px 'IBM Plex Mono',monospace;color:#B7C3D0;line-height:1.6;">DETECT → UNDERSTAND → EXPLAIN → RECOMMEND → DECIDE</div>
+      </div>
+    </article>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section style="background:#0a1420;border-top:1px solid #1e2a38;border-bottom:1px solid #1e2a38;">
+    <div style="max-width:1280px;margin:0 auto;padding:76px 40px;">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#3E9AD6;margin-bottom:14px;">Defense AI Pipeline</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.14;color:#F2F6FA;margin:0 0 38px;">표적 탐지에서 지휘관의 판단까지</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:26px;margin-bottom:44px;">
+        <div style="flex:1;min-width:150px;">
+          <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#F2F6FA;margin-bottom:8px;">DETECT</div>
+          <div style="font-size:13.5px;color:#9DAAB9;line-height:1.5;">표적·상황 탐지</div>
+          <div style="height:3px;border-radius:2px;background:linear-gradient(90deg,#3E9AD6 20%,#1e2a38 20%);margin-top:14px;"></div>
+        </div>
+        <div style="flex:1;min-width:150px;">
+          <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#F2F6FA;margin-bottom:8px;">UNDERSTAND</div>
+          <div style="font-size:13.5px;color:#9DAAB9;line-height:1.5;">전장상황 이해</div>
+          <div style="height:3px;border-radius:2px;background:linear-gradient(90deg,#3E9AD6 40%,#1e2a38 40%);margin-top:14px;"></div>
+        </div>
+        <div style="flex:1;min-width:150px;">
+          <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#F2F6FA;margin-bottom:8px;">EXPLAIN</div>
+          <div style="font-size:13.5px;color:#9DAAB9;line-height:1.5;">판단 근거 설명</div>
+          <div style="height:3px;border-radius:2px;background:linear-gradient(90deg,#3E9AD6 60%,#1e2a38 60%);margin-top:14px;"></div>
+        </div>
+        <div style="flex:1;min-width:150px;">
+          <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#F2F6FA;margin-bottom:8px;">RECOMMEND</div>
+          <div style="font-size:13.5px;color:#9DAAB9;line-height:1.5;">가능한 방책 제시</div>
+          <div style="height:3px;border-radius:2px;background:linear-gradient(90deg,#3E9AD6 80%,#1e2a38 80%);margin-top:14px;"></div>
+        </div>
+        <div style="flex:1;min-width:150px;">
+          <div style="font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#3E9AD6;margin-bottom:8px;">DECIDE</div>
+          <div style="font-size:13.5px;color:#9DAAB9;line-height:1.5;">지휘관 최종 판단</div>
+          <div style="height:3px;border-radius:2px;background:linear-gradient(90deg,#3E9AD6 100%,#1e2a38 100%);margin-top:14px;"></div>
+        </div>
+      </div>
+      <p style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(20px,2.6vw,30px);line-height:1.42;color:#F2F6FA;margin:0;max-width:34ch;">CARAI의 AI는 지휘관을 대신하는 것이 아니라, 지휘관이 더 빠르고 신뢰할 수 있는 판단을 내릴 수 있도록 지원합니다.</p>
+
+    </div>
+  </section>
+
+  <!-- FROM RESEARCH TO DEFENSE -->
+  <section style="background:#08111a;">
+
+  </section>
+
+  <!-- RESEARCH -> MISSION IMPACT -->
+  <section style="background:#0a1420;border-top:1px solid #1e2a38;">
+
+  </section>
+
+  <!-- CONNECTED WITH THE MILITARY -->
+
+
+  <!-- CLOSING -->
+  <section style="background:#08111a;border-top:1px solid #1e2a38;">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px;">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#3E9AD6;margin-bottom:14px;">Connecting Research with Military Needs</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.14;color:#F2F6FA;margin:0 0 16px;max-width:26ch;">연구자가 생각한 기술이 아니라, 군이 실제 필요로 하는 기술에 응용</h2><p style="font-size:15.5px;line-height:1.7;color:#9DAAB9;max-width:74ch;margin:0 0 34px;">CARAI는 합참과 육·해·공군·해병대 소속 군관련 실무자들과 센터 연구성과를 공유하고, 한국군사과학기술학회 전시를 통해 실제 전장환경 적용을 위한 기술 소요를 발굴하였습니다.</p>
+
+      <div style="position:relative;margin-bottom:20px;">
+        <div style="font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#3E9AD6;margin-bottom:14px;">From the Lab to the Field</div>
+        <div style="max-width:1040px;margin:0 auto;">
+        <div id="fieldTrack" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;border:1px solid #1e2a38;border-radius:16px;background:#0a1420;">
+          <figure style="flex:0 0 100%;scroll-snap-align:start;margin:0;">
+            <div style="aspect-ratio:16/9;background:#0a1420;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="uploads/글미1-41f3f760.jpg" alt="특화연구센터 군 활용 기술성과 공유회 단체사진 (2025.04)" loading="eager" decoding="sync" style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+          </figure>
+          <figure style="flex:0 0 100%;scroll-snap-align:start;margin:0;">
+            <div style="aspect-ratio:16/9;background:#0a1420;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="uploads/글미4-4ded2458.jpg" alt="군 장비 현장 방문 및 기술 적용 검토" loading="eager" decoding="sync" style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+          </figure>
+          <figure style="flex:0 0 100%;scroll-snap-align:start;margin:0;">
+            <div style="aspect-ratio:16/9;background:#0a1420;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="uploads/글미5-89de7449.png" alt="공군 인공지능 발전 정책 및 소요 발표 (2025.04.11)" loading="eager" decoding="sync" style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+          </figure>
+          <figure style="flex:0 0 100%;scroll-snap-align:start;margin:0;">
+            <div style="aspect-ratio:16/9;background:#0a1420;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="uploads/pasted-1788102607634-0.png" alt="한국군사과학기술학회 전시 (2020–2025) · 142편 발표" loading="eager" decoding="sync" style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+          </figure>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:10px;flex-wrap:wrap;">
+          <div id="fieldDots" style="display:flex;gap:9px;">
+          <button data-i="0" aria-label="사진 1" style="width:28px;height:4px;border:none;border-radius:2px;background:#3E9AD6;cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="1" aria-label="사진 2" style="width:28px;height:4px;border:none;border-radius:2px;background:#1e2a38;cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="2" aria-label="사진 3" style="width:28px;height:4px;border:none;border-radius:2px;background:#1e2a38;cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="3" aria-label="사진 4" style="width:28px;height:4px;border:none;border-radius:2px;background:#1e2a38;cursor:pointer;padding:0;transition:background .2s;"></button>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span id="fieldCounter" style="font:500 12px 'IBM Plex Mono',monospace;color:#7d8b9c;">01 / 04</span>
+            <button id="fieldPrev" aria-label="이전 사진" style="width:44px;height:44px;border:1px solid #1e2a38;border-radius:50%;background:#0d1620;color:#C8D3DE;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 18l-6-6 6-6"></path></svg></button>
+            <button id="fieldNext" aria-label="다음 사진" style="width:44px;height:44px;border:1px solid #1e2a38;border-radius:50%;background:#0d1620;color:#C8D3DE;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section style="background:#0a1420;border-top:1px solid #1e2a38;">
+    <div style="max-width:960px;margin:0 auto;padding:88px 40px;text-align:center;">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#3E9AD6;margin-bottom:24px;">From Fundamental AI to Future Defense Capability</div>
+      <p style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(22px,3.2vw,34px);line-height:1.42;color:#F2F6FA;margin:0 0 26px;">CARAI는 국방의 문제에서 출발하여 AI 원천기술을 연구하고, 군과 함께 활용 가능성을 검토하며, 미래 무기체계와 국방 R&amp;D로 연결될 수 있는 기술 소요를 발굴합니다.</p>
+      <div style="font:600 15px 'Public Sans',sans-serif;color:#3E9AD6;margin-bottom:10px;">Reliable AI for Those Who Decide.</div>
+      <div style="font-size:14.5px;color:#9DAAB9;margin-bottom:34px;">미래 전장에서 인간이 더 신뢰할 수 있는 판단을 내릴 수 있도록.</div>
+      <a href="CARAI Contact.dc.html" style="height:50px;padding:0 28px;border-radius:8px;background:#3E9AD6;color:#06222E;font:600 15px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:9px;">Get in touch<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+      <img src="carai-logo.png" alt="CARAI" style="height:64px;width:auto;filter:brightness(0) invert(1);opacity:.9;">
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+    </div>
+  </footer>
+
+
+</div></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1668A0&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#1668A0&quot;,&quot;#125650&quot;,&quot;#8A3324&quot;,&quot;#2F4B7C&quot;],&quot;section&quot;:&quot;Theme&quot;},
+  &quot;paper&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FAF8F3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FAF8F3&quot;,&quot;#F4F1EA&quot;,&quot;#FBFAF8&quot;,&quot;#F1ECE2&quot;],&quot;section&quot;:&quot;Theme&quot;}
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    try {
+      var track = document.getElementById('fieldTrack');
+      if (!track) return;
+      var slides = track.children, n = slides.length, cur = 0;
+      var prev = document.getElementById('fieldPrev');
+      var next = document.getElementById('fieldNext');
+      var counter = document.getElementById('fieldCounter');
+      var dots = document.querySelectorAll('#fieldDots button');
+      var sync = function () {
+        if (counter) counter.textContent = ('0' + (cur + 1)).slice(-2) + ' / ' + ('0' + n).slice(-2);
+        for (var d = 0; d < dots.length; d++) dots[d].style.background = (d === cur) ? '#3E9AD6' : '#1e2a38';
+        if (prev) prev.style.opacity = cur === 0 ? '.4' : '1';
+        if (next) next.style.opacity = cur === n - 1 ? '.4' : '1';
+      };
+      var goTo = function (i) {
+        cur = Math.max(0, Math.min(n - 1, i));
+        track.scrollTo({ left: slides[cur].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        sync();
+      };
+      if (prev) prev.addEventListener('click', function () { goTo(cur - 1); });
+      if (next) next.addEventListener('click', function () { goTo(cur + 1); });
+      for (var d = 0; d < dots.length; d++) {
+        (function (idx) { dots[idx].addEventListener('click', function () { goTo(idx); }); })(d);
+      }
+      var raf;
+      track.addEventListener('scroll', function () {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          var i = Math.round(track.scrollLeft / (track.clientWidth || 1));
+          if (i !== cur) { cur = Math.max(0, Math.min(n - 1, i)); sync(); }
+        });
+      });
+      sync();
+    } catch (e) {}
+  }
+
+  renderVals() {
+    return { accent: this.props.accent ?? '#1668A0', paper: this.props.paper ?? '#FAF8F3' };
+  }
+}
+</script>
+</body>
+</html>

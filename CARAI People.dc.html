@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+</style>
+<script src="carai-i18n.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#faf8f3}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(27,24,21,.12)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+</style>
+</helmet>
+
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--amber:#C4863A;--accent:{{accent}};--paper:{{paper}};--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- UTILITY BAR -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><a href="CARAI Publications.dc.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- NAV with About dropdown -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="CARAI Home.dc.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="CARAI Home.dc.html#about" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="CARAI People.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="CARAI Initiative.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="CARAI Media.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="CARAI Research.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Research</a>
+        <a href="CARAI Groups.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Groups</a>
+        <a href="CARAI Publications.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">연구성과</a>
+        <a href="CARAI Application.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">연구응용</a>
+        <a href="CARAI Contact.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PEOPLE BODY -->
+  <!-- PAGE HEADER -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
+    <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">About · People</div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+      <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">CARAI를 만드는 사람들</h1>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;">A cross-disciplinary team of faculty and researchers building the theory and practice of explainable, trustworthy AI.</p>
+    </div>
+  </section>
+  <section style="max-width:1280px;margin:0 auto;padding:26px 40px 10px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;"><span style="font-family:'Newsreader',serif;font-weight:500;font-size:26px;color:var(--ink);">Leadership</span><span style="flex:1;height:1px;background:var(--hair);"></span></div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:340px 1fr;gap:0;">
+        <div style="background:#EDF1F6;"><img src="uploads/Yong Man Ro.jpg" alt="Yong Man Ro" style="width:100%;height:100%;object-fit:cover;display:block;min-height:300px;"></div>
+        <div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font:600 26px 'Newsreader',serif;color:var(--ink);">Yong Man Ro</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0 20px;">
+            <span style="font:500 13px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);">Director, CARAI · Professor, KAIST</span>
+            <span style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#9A6B22;border:1px solid var(--amber,#C4863A);border-radius:6px;padding:3px 9px;">IEEE Fellow</span>
+            <a href="https://www.ivllab.kaist.ac.kr/people/professor" target="_blank" rel="noopener" style="color:var(--ink2);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:2px solid var(--hair);padding-bottom:2px;" style-hover="color:var(--accent);border-color:var(--accent);">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+          </div>
+          <p style="font-size:15.5px;line-height:1.6;color:var(--ink2);margin:0;max-width:52ch;">Research in Human-Centered Multimodal Signal Processing — building AI that perceives, reasons over, and explains multimodal signals in partnership with people.</p>
+        </div>
+      </div>
+  </section>
+  <section style="max-width:1280px;margin:0 auto;padding:48px 40px 10px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;"><span style="font-family:'Newsreader',serif;font-weight:500;font-size:26px;color:var(--ink);">Principal Investigators</span><span style="flex:1;height:1px;background:var(--hair);"></span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;">
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Junmo Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://siit.kaist.ac.kr/members/faculty/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Hoirin Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://sssclab.kaist.ac.kr/professor" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Seong-Whan Lee</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">Korea Univ.</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="http://pr.korea.ac.kr/sub2_1_k.php?code=LSW" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Se-young Yun</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://fbsqkd.github.io/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+    </div>
+  </section>
+  <section style="max-width:1280px;margin:0 auto;padding:48px 40px 10px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;"><span style="font-family:'Newsreader',serif;font-weight:500;font-size:26px;color:var(--ink);">Investigators</span><span style="flex:1;height:1px;background:var(--hair);"></span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;">
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Seon Joo Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">Yonsei Univ.</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://www.ciplab.kr/members/professor" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Minsu Cho</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">포항공과대학교</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://cvlab.postech.ac.kr/~mcho/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Chang Dong Yoo</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://sanctusfactory.com/family.php" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jinwoo Shin</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://alinlab.kaist.ac.kr/shin.html" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Bohyung Han</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">SNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://ece.snu.ac.kr/research-faculty/faculty/full-time?md=view&amp;profid=p825" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">In So Kweon</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://rcv.kaist.ac.kr/index.php?mid=rcv_faculty" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Eunho Yang</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://mli.kaist.ac.kr/people/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Seong-Ju Hwang</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="http://www.sungjuhwang.com/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jaesik Choi</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 01 · XAI</span></div>
+        <a href="https://sail.kaist.ac.kr/members/jaesik/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jung-Woo Choi</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://sound.kaist.ac.kr/members/professor" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Hong Kook Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">GIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="http://aiter.gist.ac.kr/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">HyunWook Park</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="http://athena.kaist.ac.kr/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jong Beom Ra</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://ee.kaist.ac.kr/professor/12168/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Yong-Gu Lee</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">GIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://nsl.gist.ac.kr/prog/gsPerson/nsl/P/view.do?siteCode=nsl&amp;mno=sub02_00&amp;tmplId=template_d1&amp;personId=P00002380" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Sungho Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">Yeungnam Univ.</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://avilabyu.wixsite.com/avil/professor" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Changick Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://cilabs.kaist.ac.kr/members" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Munchurl Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://www.viclab.kaist.ac.kr/professor" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Hak Gu Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">CAU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 02 · Multimodality</span></div>
+        <a href="https://irislab.cau.ac.kr/members/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Sanghoon Sull</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">Korea Univ.</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="http://mpeg.korea.ac.kr" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Chang Soo Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">Korea Univ.</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="https://mcl.korea.ac.kr/people/professor/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Youngchul Sung</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="https://sites.google.com/view/youngchulsung" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jaekyun Moon</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="https://moonlab.kaist.ac.kr/People.html" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Dong Eui Chang</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="https://control.kaist.ac.kr/Professor" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Gunhee Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">SNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="https://vision.snu.ac.kr/gunhee/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Byoung-Tak Zhang</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">SNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 03 · In-context Learning</span></div>
+        <a href="https://bi.snu.ac.kr/members/byoung-tak-zhang.html" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jungwoo Lee</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">SNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://cml.snu.ac.kr/professor/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Sungroh Yoon</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">SNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://data.snu.ac.kr/index.php/people/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Ho-Young Jung</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://sites.google.com/view/mlc-lab/home?authuser=0" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">DoHyeun Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">JNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://ce.jejunu.ac.kr/ce/professor/professorinfo.htm" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jonghyun Choi</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">SNU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://ppolon.github.io/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Song Chong</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KAIST</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://gsai.kaist.ac.kr/people/?lang=ko" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Jung Uk Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KHU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://visualai.khu.ac.kr/people/professor" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:22px;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+          <div><div style="font:600 17px 'Public Sans',sans-serif;color:var(--ink);">Seong Tae Kim</div><div style="font:500 12px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:4px;">KHU</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;"><span style="width:8px;height:8px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">Group 04 · Decision Support</span></div>
+        <a href="https://ami.khu.ac.kr/people/pi/" target="_blank" rel="noopener" style="margin-top:auto;color:var(--accent,#1668A0);font:600 13px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="text-decoration:underline;">Homepage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+      </div>
+    </div>
+  </section>
+  <section style="max-width:1280px;margin:36px auto 0;padding:0 40px 90px;">
+    
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+      <img src="carai-logo.png" alt="CARAI" style="height:64px;width:auto;filter:brightness(0) invert(1);opacity:.9;">
+      <span style="font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1668A0&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#1668A0&quot;,&quot;#125650&quot;,&quot;#8A3324&quot;,&quot;#2F4B7C&quot;],&quot;section&quot;:&quot;Theme&quot;},
+  &quot;paper&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FAF8F3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FAF8F3&quot;,&quot;#F4F1EA&quot;,&quot;#FBFAF8&quot;,&quot;#F1ECE2&quot;],&quot;section&quot;:&quot;Theme&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#1668A0', paper: this.props.paper ?? '#FAF8F3' };
+  }
+}
+</script>
+</body>
+</html>

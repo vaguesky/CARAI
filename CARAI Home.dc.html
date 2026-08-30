@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html.lang-ko, html.lang-ko [style*="Public Sans"], html.lang-ko [style*="Newsreader"], html.lang-ko [style*="IBM Plex Mono"]{font-family:'Noto Sans KR',system-ui,sans-serif !important;}
+</style>
+<script src="carai-i18n.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#faf8f3}
+@keyframes heroKen{0%{opacity:0;transform:scale(1.14) translate3d(1.5%,-1.5%,0)}7%{opacity:1}33%{opacity:1}40%{opacity:0}100%{opacity:0;transform:scale(1) translate3d(-1.5%,1.5%,0)}}
+.heroFrame{will-change:opacity,transform}
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd__menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(2px);min-width:246px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 22px 46px rgba(27,24,21,.16);padding:8px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .28s;transition-delay:.28s;z-index:50}
+.nav-dd__menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:16px}
+.nav-dd:hover .nav-dd__menu,.nav-dd:focus-within .nav-dd__menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px);transition:opacity .18s ease,transform .18s ease,visibility 0s;transition-delay:0s}
+.nav-dd__item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .13s}
+.nav-dd__item:hover{background:var(--tint)}
+#groupsTrack::-webkit-scrollbar{display:none}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}.heroFrame{animation:none!important}}
+</style>
+</helmet>
+
+<div style="--surface:#ffffff;--ink:#1B1815;--ink2:#463F37;--muted:#77706A;--hair:#E6E0D6;--brand:#3E9AD6;--accent:{{accent}};--paper:{{paper}};--tint:color-mix(in srgb,var(--accent,#1668A0) 12%,#fff);--accentD:color-mix(in srgb,var(--accent,#1668A0) 80%,#000);background:var(--paper,#FAF8F3);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <a href="#main" style="position:absolute;left:-9999px;top:12px;padding:10px 16px;background:var(--ink);color:#fff;border-radius:6px;font:500 13px 'Public Sans',sans-serif;z-index:60;text-decoration:none;" style-focus="left:16px;">Skip to content</a>
+
+  <!-- ===== UTILITY BAR ===== -->
+  <div style="background:var(--ink);color:#C7BFB5;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:38px;display:flex;align-items:center;justify-content:space-between;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.05em;">
+      <div style="display:flex;gap:22px;"><span>KAIST</span></div>
+      <div style="display:flex;gap:20px;align-items:center;"><a href="CARAI Publications.dc.html" style="color:var(--brand);text-decoration:none;">Publications →</a></div>
+    </div>
+  </div>
+
+  <!-- ===== PRIMARY NAV ===== -->
+  <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
+        <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Newsreader',serif;font-weight:600;font-size:23px;letter-spacing:.04em;color:var(--ink);">CARAI</span>
+          <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;">
+        <div class="nav-dd" tabindex="0">
+          <a href="#about" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;" style-hover="color:var(--accent);">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <div class="nav-dd__menu">
+            <a class="nav-dd__item" href="CARAI People.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M15 8a3 3 0 1 0 0-.01M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 2 6 5"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">People</span><span style="display:block;font-size:12px;color:var(--muted);">Faculty &amp; researchers</span></span></a>
+            <a class="nav-dd__item" href="CARAI Initiative.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Our Initiative</span><span style="display:block;font-size:12px;color:var(--muted);">Mission</span></span></a>
+            <a class="nav-dd__item" href="CARAI Media.dc.html"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H4zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7"></path></svg></span><span><span style="display:block;font:600 14px 'Public Sans',sans-serif;color:var(--ink);">Media Coverage</span><span style="display:block;font-size:12px;color:var(--muted);">In the press</span></span></a>
+          </div>
+        </div>
+        <a href="CARAI Research.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Research</a>
+        <a href="CARAI Groups.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Groups</a>
+        <a href="CARAI Publications.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">연구성과</a>
+        <a href="CARAI Application.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">연구응용</a>
+        <a href="CARAI Contact.dc.html" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;" style-hover="color:var(--accent);">Contact</a>
+        <div style="width:34px;height:34px;border:1px solid var(--hair);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink2);" style-hover="border-color:var(--accent);color:var(--accent);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6"></circle><path d="M20 20l-4-4"></path></svg></div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section data-screen-label="Hero" style="position:relative;">
+    <div style="height:560px;position:relative;overflow:hidden;background:#141210;">
+      <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:1;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 22% 25%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(196,134,58,.18),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#E7DECF,#E7DECF 12px,#DDD3C1 12px,#DDD3C1 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 0s infinite both;"></div>
+      <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 72% 30%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(62,154,214,.22),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#D8E4EC,#D8E4EC 12px,#C6D8E4 12px,#C6D8E4 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 7s infinite both;"></div>
+      <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 42% 62%,rgba(255,255,255,.10),transparent 55%),linear-gradient(120deg,rgba(150,96,60,.22),rgba(20,18,15,.10)),repeating-linear-gradient(135deg,#E4D9C8,#E4D9C8 12px,#D8CBB6 12px,#D8CBB6 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 14s infinite both;"></div>
+      <video id="heroVideo" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-hidden="true" src="uploads/0705-1.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;z-index:1;"></video>
+      <div style="position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(20,18,15,.82) 0%,rgba(20,18,15,.46) 48%,rgba(20,18,15,.14) 100%),linear-gradient(0deg,rgba(20,18,15,.34),transparent 42%);"></div>
+      <div style="max-width:1280px;margin:0 auto;padding:54px 40px 66px;height:100%;position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:end;">
+        <div style="max-width:640px;align-self:end;">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:22px;">Center for applied research in artificial intelligence</div><h1 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(34px,4.6vw,60px); line-height: 1.05; letter-spacing: -0.02em; color: #fff; margin: 0 0 22px; width: 637px; height: 191px">신뢰성 있는 사람-AI 협업 의사결정을 위한 설명가능 인공지능 기술 연구</h1>
+
+          <p style="font-size:18px;line-height:1.55;color:rgba(255,255,255,.84);max-width:520px;margin:0 0 30px;">견고하고 신뢰할 수 있는 인공지능을 구축하기 위해, 핵심 기술의 기반을 확립하는 동시에 고도화된 기술 개발과 폭넓은 응용을 추진합니다.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="CARAI Research.dc.html" style="height:50px;padding:0 26px;border-radius:8px;background:var(--accent,#1668A0);color:#fff;font:600 15px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background .18s;" style-hover="background:var(--accentD);" data-comment-anchor="0a3e19e4b9-a">Explore research<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            <a href="CARAI Publications.dc.html" style="height:50px;padding:0 24px;border-radius:8px;border:1px solid rgba(255,255,255,.5);color:#fff;font:600 15px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.06);transition:background .18s;" style-hover="background:rgba(255,255,255,.16);" data-comment-anchor="0455bb3673-a">Publications</a>
+          </div>
+        </div>
+        <div style="align-self:start;width:100%;background:var(--surface);border-radius:12px;padding:24px;box-shadow:0 18px 44px rgba(20,18,15,.30);">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:16px;">Four research groups</div>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">01</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">설명가능한 인공지능 연구실</span></a>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">02</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">멀티모달 학습 및 탐지 연구실</span></a>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">03</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">극소량 데이터 기반 효율학습 연구실</span></a>
+          <a href="#groups" style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);"><span style="font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);">04</span><span style="font-size:13.5px;line-height:1.3;font-weight:500;">인공지능 의사결정 방책추천 연구실</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED STRIP ===== -->
+  <section style="border-bottom:1px solid var(--hair);background:var(--surface);">
+    <div style="max-width:1280px;margin:0 auto;padding:24px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+      <a href="#groups" style="display:flex;gap:14px;padding-right:26px;border-right:1px solid var(--hair);text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">01</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);" data-comment-anchor="aa4201df07-span">설명가능한 인공지능 연구실</span>
+      </a>
+      <a href="#groups" style="display:flex;gap:14px;padding:0 26px;border-right:1px solid var(--hair);text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">02</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);" data-comment-anchor="ecaf302453-span">멀티모달 학습 및 탐지 연구실</span>
+      </a>
+      <a href="#groups" style="display:flex;gap:14px;padding:0 26px;border-right:1px solid var(--hair);text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">03</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);" data-comment-anchor="57acc8ed2c-span">극소량 데이터 기반 효율학습 연구실</span>
+      </a>
+      <a href="#groups" style="display:flex;gap:14px;padding-left:26px;text-decoration:none;align-items:center;">
+        <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">04</span>
+        <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);" data-comment-anchor="5edd497b81-span">인공지능 의사결정 방책추천 연구실</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 01 ABOUT / MISSION ===== -->
+  <section id="about" data-screen-label="About" style="max-width:1280px;margin:0 auto;padding:92px 40px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:20px;">01</div>
+        <h2 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(30px,3.4vw,44px); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 20px; width: 555px; height: 98px">사람의 의사결정을 돕는 신뢰할 수 있는 인공지능 기술 연구</h2>
+        <p style="font-size:17px;line-height:1.62;color:var(--ink2);max-width:490px;margin:0 0 18px;" data-comment-anchor="b19d0d2655-p">CARAI 연구는 인간-AI 상호작용 환경에서 사람이 보다 신뢰할 수 있는 의사결정을 내릴 수 있도록 지원합니다. 견고하고 신뢰할 수 있는 AI 모델을 개발하는 것은 이제 최첨단 인공지능 기술 연구개발을 선도하기 위한 핵심 요소가 되었습니다.</p>
+        <p style="font-size:17px;line-height:1.62;color:var(--ink2);max-width:490px;margin:0 0 28px;" data-comment-anchor="af9c84d68a-p">CARAI는 AI 핵심 원천기술을 개발하는 동시에, 이를 고도화하고 폭넓은 응용 분야로 확장함으로써 인공지능의 미래를 개척하고 있습니다. 이를 위해 서로 긴밀히 연계된 4개의 연구실을 중심으로 연구를 수행하고 있습니다.</p>
+        <a href="CARAI Initiative.dc.html" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;display:inline-flex;align-items:center;gap:7px;" data-comment-anchor="bbfa255235-a">About the center<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#141210;position:relative;box-shadow:0 12px 30px rgba(27,24,21,.12);">
+        <video id="aboutVideo" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-hidden="true" src="uploads/0706(2).mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 RESEARCH GROUPS ===== -->
+  <section id="groups" data-screen-label="Research Groups" style="background:var(--surface);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);">
+    <div style="max-width:1280px;margin:0 auto;padding:92px 40px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:24px;">
+        <div style="max-width:640px;">
+          <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:16px;">02</div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,4vw,52px);line-height:1.06;letter-spacing:-0.02em;margin:0 0 14px;" data-comment-anchor="728819b451-h2">Research Groups</h2>
+          <p style="font-size: 16px; line-height: 1.55; color: var(--muted); max-width: 440px; margin: 0; width: 424px; height: 50px" data-comment-anchor="487b73e702-p">설명가능하고 신뢰할 수 있는 인공지능기술의 실제 응용을 선도하는 4개 연구실 그룹</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span id="groupsCounter" style="font:500 13px 'IBM Plex Mono',monospace;color:var(--muted);margin-right:6px;">01 / 04</span>
+          <button id="groupsPrev" aria-label="Previous group" style="width:52px;height:52px;border:1px solid var(--hair);border-radius:50%;background:var(--paper,#FAF8F3);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s,border-color .18s,color .18s;" style-hover="border-color:var(--accent);color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 18l-6-6 6-6"></path></svg></button>
+          <button id="groupsNext" aria-label="Next group" style="width:52px;height:52px;border:1px solid var(--hair);border-radius:50%;background:var(--paper,#FAF8F3);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s,border-color .18s,color .18s;" style-hover="border-color:var(--accent);color:var(--accent);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div id="research" style="position:relative;">
+        <div id="groupsTrack" style="display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:16px;">
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div data-om-raster="" style="position:relative;overflow:hidden;background:#EAEEF4;">
+              <img src="uploads/Group1_2.png" alt="Group 1 — Explainable AI Theory Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 01 · XAI</div>
+              <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.14;letter-spacing:-0.01em;margin:0 0 16px;">설명가능한 인공지능 연구실</h3>
+              <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px;max-width:420px;" data-comment-anchor="5c04d6e06d-p">AI의 의사결정을 이해하고 신뢰할 수 있게 만드는 핵심 원리에 대한 AI 설명가능성 연구</p>
+              <a href="CARAI Groups.dc.html#group1" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div style="position:relative;overflow:hidden;background:#EDF1F6;"><img src="uploads/Group2_4.png" alt="Group 2 — Multimodal Learning and Detection Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 02 · Multimodality</div>
+              <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.14;letter-spacing:-0.01em;margin:0 0 16px;">멀티모달 학습 및 탐지 연구실</h3>
+              <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px;max-width:420px;" data-comment-anchor="0f74656b3b-p">시각·언어·소리 등 다양한 모달리티를 아우르는 학습을 통해 견고한 탐지와 이해를 구현</p>
+              <a href="CARAI Groups.dc.html#group2" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div style="position:relative;overflow:hidden;background:#EDF1F6;"><img src="uploads/Group3_2.png" alt="Group 3 — Few-shot Learning in the Wild Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 03 · In-context Learning</div>
+              <h3 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(26px,2.6vw,34px); line-height: 1.14; letter-spacing: -0.01em; margin: 0 0 16px; width: 488px; height: 51px">극소량 데이터기반효율학습 연구실</h3>
+              <p style="font-size: 16.5px; line-height: 1.6; color: var(--ink2); margin: 0 0 26px; max-width: 420px; width: 446px; height: 61px" data-comment-anchor="b87757cc25-p">복잡한 실제 환경에서 적은 데이터 만으로도 효율적으로 학습하는 인공지능 기술 연구</p>
+              <a href="CARAI Groups.dc.html#group3" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+            <div style="position:relative;overflow:hidden;background:#141126;"><img src="uploads/Group4_4.png" alt="Group 4 — Decision Making and Recommendation Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
+            <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 04 · Decision Support</div>
+              <h3 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(26px,2.6vw,34px); line-height: 1.14; letter-spacing: -0.01em; margin: 0 0 16px; width: 494px; height: 51px">인공지능 의사결정 방책추천 연구실</h3>
+              <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px;max-width:420px;" data-comment-anchor="105c455921-p">설명가능 AI를 실제 의사결정과 방책추천 시스템에 적용하는 인공지능 응용 기술 연구</p>
+              <a href="CARAI Groups.dc.html#group4" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;" data-comment-anchor="df9adae098-a">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </article>
+        </div>
+        <div id="groupsDots" style="display:flex;justify-content:center;gap:10px;margin-top:28px;">
+          <button data-i="0" aria-label="Go to group 1" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--accent,#1668A0);cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="1" aria-label="Go to group 2" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--hair);cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="2" aria-label="Go to group 3" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--hair);cursor:pointer;padding:0;transition:background .2s;"></button>
+          <button data-i="3" aria-label="Go to group 4" style="width:32px;height:4px;border:none;border-radius:2px;background:var(--hair);cursor:pointer;padding:0;transition:background .2s;"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION BAND (inverted) ===== -->
+  <section style="background:var(--ink);color:#EDE7DB;">
+    <div style="max-width:960px;margin:0 auto;padding:96px 40px;text-align:center;">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:26px;" data-comment-anchor="cc9058246f-div">Our mission</div>
+      <p style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(24px,3.4vw,38px);line-height:1.34;letter-spacing:-0.01em;color:#F6F1E7;margin:0;" data-comment-anchor="56d2547933-p">"CARAI 연구진은 AI의 핵심 기반기술을 개발하고, 이를 다양한 분야의 고도화된 응용으로 확장함으로써 대한민국 인공지능기술의 미래를 선도하고 있습니다."</p>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATIONS + CONTACT ===== -->
+  <section id="pubs" data-screen-label="Publications &amp; Contact" style="max-width:1280px;margin:0 auto;padding:92px 40px;">
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:stretch;">
+      <div>
+        <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:18px;">03</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3vw,40px);line-height:1.1;letter-spacing:-0.01em;margin:0 0 18px;">연구 실적</h2>
+        <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);max-width:520px;margin:0 0 30px;" data-comment-anchor="db983dbc72-p">CARAI 센터의 4개 연구그룹은 설명가능하고 신뢰할 수 있는 인공지능의 이론부터 실제 응용까지 폭넓은 연구를 수행하며 세계적 수준의 연구 경쟁력을 확보하고 있습니다. 이러한 연구 성과는 CVPR, ICML, ICLR, AAAI, ICCV, NeurIPS 등 전 세계 AI 연구자들이 인정하는 최상위 국제학술대회(Top-tier AI Conferences) 논문 발표를 통해 입증되고 있습니다.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;" data-comment-anchor="7d1ba7fc92-div">
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);" data-comment-anchor="7b6d0f677c-span">Explainable AI</span>
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);" data-comment-anchor="68208fa6fd-span">Multimodal Learning</span>
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);" data-comment-anchor="3fb1b2c218-span">In-context Learning</span>
+          <span style="padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font:500 12.5px 'Public Sans',sans-serif;color:var(--ink2);background:var(--surface);" data-comment-anchor="00b57efb6f-span">Decision Support</span>
+        </div>
+        <a href="CARAI Publications.dc.html" style="height:50px;padding:0 26px;border-radius:8px;background:var(--accent,#1668A0);color:#fff;font:600 15px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background .18s;" style-hover="background:var(--accentD);" data-comment-anchor="a6c8010ef8-a">Browse all publications<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div id="contact" style="background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:32px;display:flex;flex-direction:column;">
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:18px;" data-comment-anchor="f743ca2dd8-div">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div>
+            <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;" data-comment-anchor="ea65ff55fd-div">Address</div>
+            <div style="font-size:15px;line-height:1.5;color:var(--ink);" data-comment-anchor="58733280c0-div">335 Gwahak-ro (373-1 Guseong-dong)<br>Yuseong-gu, Daejeon<br>Republic of Korea</div>
+          </div>
+          <div style="border-top:1px solid var(--hair);padding-top:18px;">
+            <div style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">기관</div>
+            <div style="font-size:15px;line-height:1.5;color:var(--ink);">Korea Advanced Institute of Science and Technology</div>
+          </div>
+          <a href="CARAI Contact.dc.html" style="margin-top:6px;color:var(--accent,#1668A0);font:600 14px 'Public Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:7px;">Get in touch<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:var(--ink);color:#A29A90;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;">
+      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;">
+        <div>
+          <img src="carai-logo.png" alt="CARAI" style="height:74px;width:auto;display:block;margin-bottom:18px;filter:brightness(0) invert(1);opacity:.92;">
+          <p style="font-size:14px;line-height:1.6;color:#8A8177;max-width:260px;margin:0;">Center for Applied Research in Artificial Intelligence — KAIST.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#EDE7DB;margin-bottom:4px;">Research</div><a href="#groups" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;">설명가능한 인공지능 연구실</a><a href="#groups" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;" data-comment-anchor="cb8ca899e5-a">멀티모달 학습 및 탐지 연구실</a><a href="#groups" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;" data-comment-anchor="a086ad4535-a">극소량 데이터기반효율학습 연구실</a><a href="#groups" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;" data-comment-anchor="d5902ef4f8-a">인공지능 의사결정 방책추천 연구실</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px;"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#EDE7DB;margin-bottom:4px;">Center</div><a href="CARAI Initiative.dc.html" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;">About</a><a href="CARAI Publications.dc.html" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;">연구실적</a><a href="CARAI Contact.dc.html" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;">Contact</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px;"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#EDE7DB;margin-bottom:4px;">Partner</div><a href="https://kaist.ac.kr/kr/" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;">Korea Advanced Institute of Science and Technology</a><a href="https://isc.kaist.ac.kr/" style="font-size:14px;color:#A29A90;text-decoration:none;" style-hover="color:#fff;">Institute for Security Convergence</a></div>
+      </div>
+      <div style="margin-top:44px;padding-top:22px;border-top:1px solid #39342E;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font:500 12px 'IBM Plex Mono',monospace;color:#6C645B;">
+        <span>© 2026 CARAI · KAIST — 335 Gwahak-ro, Yuseong-gu, Daejeon, KR</span>
+        <div style="display:flex;gap:20px;"></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1668A0&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#1668A0&quot;,&quot;#125650&quot;,&quot;#8A3324&quot;,&quot;#2F4B7C&quot;],&quot;section&quot;:&quot;Theme&quot;},
+  &quot;paper&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FAF8F3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FAF8F3&quot;,&quot;#F4F1EA&quot;,&quot;#FBFAF8&quot;,&quot;#F1ECE2&quot;],&quot;section&quot;:&quot;Theme&quot;}
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    try {
+      var v = document.getElementById('heroVideo');
+      if (!v) return;
+      var show = function () { v.style.opacity = '1'; };
+      v.addEventListener('loadeddata', show);
+      if (!v.getAttribute('src')) v.setAttribute('src', 'uploads/0705-1.mp4');
+      v.muted = true;
+      v.defaultMuted = true;
+      v.volume = 0;
+      v.loop = true;
+      v.removeAttribute('controls');
+      v.addEventListener('ended', function () { try { v.currentTime = 0; var r = v.play(); if (r && r.catch) r.catch(function () {}); } catch (e) {} });
+      v.addEventListener('volumechange', function () { if (!v.muted || v.volume > 0) { v.muted = true; v.volume = 0; } });
+      try { v.load(); } catch (e) {}
+      if (v.readyState >= 2) show();
+      var p = v.play && v.play();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+    try {
+      var a = document.getElementById('aboutVideo');
+      if (!a) return;
+      if (!a.getAttribute('src')) a.setAttribute('src', 'uploads/0706(2).mp4');
+      a.muted = true;
+      a.defaultMuted = true;
+      a.volume = 0;
+      a.loop = true;
+      a.removeAttribute('controls');
+      a.addEventListener('ended', function () { try { a.currentTime = 0; var r = a.play(); if (r && r.catch) r.catch(function () {}); } catch (e) {} });
+      a.addEventListener('volumechange', function () { if (!a.muted || a.volume > 0) { a.muted = true; a.volume = 0; } });
+      try { a.load(); } catch (e) {}
+      var pa = a.play && a.play();
+      if (pa && pa.catch) pa.catch(function () {});
+    } catch (e) {}
+    try {
+      var track = document.getElementById('groupsTrack');
+      if (!track) return;
+      var slides = track.children;
+      var n = slides.length;
+      var prev = document.getElementById('groupsPrev');
+      var next = document.getElementById('groupsNext');
+      var counter = document.getElementById('groupsCounter');
+      var dotWrap = document.getElementById('groupsDots');
+      var dots = dotWrap ? dotWrap.querySelectorAll('button') : [];
+      var accent = getComputedStyle(track).getPropertyValue('--accent') || '#1668A0';
+      var cur = 0;
+      var goTo = function (i) {
+        cur = Math.max(0, Math.min(n - 1, i));
+        var s = slides[cur];
+        track.scrollTo({ left: s.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        sync();
+      };
+      var sync = function () {
+        if (counter) counter.textContent = ('0' + (cur + 1)).slice(-2) + ' / ' + ('0' + n).slice(-2);
+        for (var d = 0; d < dots.length; d++) dots[d].style.background = (d === cur) ? 'var(--accent,#1668A0)' : 'var(--hair)';
+        if (prev) prev.style.opacity = cur === 0 ? '.4' : '1';
+        if (next) next.style.opacity = cur === n - 1 ? '.4' : '1';
+      };
+      if (prev) prev.addEventListener('click', function () { goTo(cur - 1); });
+      if (next) next.addEventListener('click', function () { goTo(cur + 1); });
+      for (var d = 0; d < dots.length; d++) {
+        (function (idx) { dots[idx].addEventListener('click', function () { goTo(idx); }); })(d);
+      }
+      var raf;
+      track.addEventListener('scroll', function () {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          var w = track.clientWidth || 1;
+          var i = Math.round(track.scrollLeft / w);
+          if (i !== cur) { cur = Math.max(0, Math.min(n - 1, i)); sync(); }
+        });
+      });
+      sync();
+    } catch (e) {}
+  }
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#1668A0',
+      paper: this.props.paper ?? '#FAF8F3',
+    };
+  }
+}
+</script>
+</body>
+</html>
