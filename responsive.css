@@ -105,6 +105,24 @@ html.lang-ko, html.lang-ko * { word-break: keep-all; overflow-wrap: break-word; 
     z-index: 9999 !important;
   }
 
+  /* The trigger is a real <a href="...#about">, so on touch there is no true
+     hover: a tap both flashes :focus-within open AND fires real navigation,
+     since nothing prevents the default click. nav-dropdown.js intercepts
+     that tap on mobile, blocks the navigation, and toggles `.is-open`
+     explicitly instead. :hover/:focus-within are disabled here so they can't
+     re-open the menu (or hold it open through the tap meant to close it) —
+     visibility on mobile is driven solely by `.is-open` from here on;
+     desktop above this breakpoint is untouched. */
+  .nav-dd:hover .nav-dd__menu,
+  .nav-dd:focus-within .nav-dd__menu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  .nav-dd.is-open .nav-dd__menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   /* Publications: the sticky filter bar is pinned to the old fixed 76px
      header height; once the header wraps to multiple lines above it would
      overlap, so let it scroll with the page instead */
