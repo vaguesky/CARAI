@@ -1,16 +1,30 @@
 /* CARAI responsive layer — shared across all pages.
-   The pages are built with inline styles from the Claude Design canvas,
-   which only defines the desktop arrangement. This file adds mobile/tablet
-   breakpoints on top without touching the inline desktop styles.
-   Inline styles win specificity over normal CSS, so overrides below use
-   `!important` deliberately and target exact, known style substrings to
-   stay precise instead of blanket-overriding unrelated inline styles. */
 
-/* ---------- universal safety ---------- */
+   ROOT CAUSE NOTE: this site's runtime (support.js) parses every element's
+   inline `style="..."` string, converts it to a JS object, and hands it to
+   React, which sets each CSS property individually on the DOM node. Browsers
+   then re-serialize the live `style` attribute in their own normalized form
+   ("property: value;" — space after the colon, reordered in places). That
+   means `[style*="grid-template-columns:1.4fr 1fr"]`-style attribute
+   substring selectors NEVER reliably match the live page, even though they
+   match the raw .dc.html source text on disk. This file intentionally uses
+   only class, id and tag selectors (all of which pass through the runtime
+   unchanged) so every rule below actually takes effect in the browser.
+   Inline styles still win on specificity, so overrides use `!important`. */
+
+/* ---------- universal safety (applies at every width) ---------- */
 img, video, iframe { max-width: 100%; }
 html, body { max-width: 100%; overflow-x: hidden; }
+html.lang-ko, html.lang-ko * { word-break: keep-all; overflow-wrap: break-word; }
 
-/* ---------- ≤1024px: fix fixed-px text boxes so they never overflow ----------
+/* Application hero: decorative glow circle (width:420px) has no clipping
+   ancestor in the source, so it pokes past the left edge of the page on any
+   viewport narrower than ~500px. Clipping it is invisible on desktop (the
+   circle already sits fully inside this box there) and removes a genuine
+   horizontal-scroll source on mobile. */
+.carai-hero-clip { overflow: hidden; }
+
+/* ---------- ≤1024px: fix leftover fixed-px text boxes ----------
    A few headings/paragraphs carry leftover explicit width/height from the
    design canvas editor (e.g. width:1012px;height:148px). Those are fine on
    a 1280px desktop canvas but overflow badly on anything narrower. Text
@@ -22,26 +36,28 @@ html, body { max-width: 100%; overflow-x: hidden; }
     max-width: 100% !important;
     height: auto !important;
   }
+
+  /* Initiative "mission band": also carries a leftover fixed
+     width:1207px;height:483px on its own container (not just text), which
+     overflows every viewport under ~1280px. Let it size from content/padding
+     instead, and swap the background-image sizing so it still covers the
+     box once height is no longer fixed. */
+  .carai-initiative-mission-band {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 260px;
+    background-size: cover !important;
+    background-position: center !important;
+  }
 }
 
 /* ---------- ≤900px: tablet — stack two/four-column layouts, trim gutters,
    and make the header safe wherever the 7-item nav no longer fits ---------- */
 @media (max-width: 900px) {
-  /* narrower side gutters on every 1280px content wrapper */
-  [style*="max-width:1280px"],
-  [style*="max-width: 1280px"] {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-  [style*="max-width:960px"],
-  [style*="max-width:1040px"] {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-
   /* primary nav: let the link row wrap under the logo instead of
      overflowing off-screen once the 7 items no longer fit one line */
-  header div[style*="height:76px"] {
+  .carai-header-row {
     height: auto !important;
     min-height: 76px;
     flex-wrap: wrap !important;
@@ -49,7 +65,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
     padding-top: 14px !important;
     padding-bottom: 14px !important;
   }
-  header nav[style*="gap:28px"] {
+  .carai-nav {
     flex-wrap: wrap !important;
     gap: 16px !important;
     row-gap: 10px !important;
@@ -69,34 +85,34 @@ html, body { max-width: 100%; overflow-x: hidden; }
   /* Publications: the sticky filter bar is pinned to the old fixed 76px
      header height; once the header wraps to multiple lines above it would
      overlap, so let it scroll with the page instead */
-  section[style*="position:sticky;top:76px"] {
+  .carai-filter-bar {
     position: static !important;
   }
 
   /* page-header title + intro paragraph (People/Initiative/Research/Groups/Media/Publications/Contact) */
-  [style*="grid-template-columns:1.4fr 1fr"] {
+  .carai-page-header-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
 
   /* Home hero: heading/CTA column + "Four research groups" card */
-  [style*="grid-template-columns:minmax(0,1fr) 300px"] {
+  .carai-hero-grid {
     grid-template-columns: 1fr !important;
   }
 
   /* Home "About" section: copy + video */
-  [style*="grid-template-columns:1fr 1fr;gap:64px"] {
+  .carai-about-grid {
     grid-template-columns: 1fr !important;
   }
 
   /* Home featured strip (4 items) + Publications stat strip (4 stats) */
-  [style*="grid-template-columns:repeat(4,1fr)"] {
+  .carai-strip-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     row-gap: 18px !important;
   }
 
   /* Home research-groups carousel card: image + copy */
-  [style*="grid-template-columns:1.08fr 1fr"] {
+  .carai-carousel-card {
     grid-template-columns: 1fr !important;
   }
   #groupsTrack article > div:first-child {
@@ -104,94 +120,89 @@ html, body { max-width: 100%; overflow-x: hidden; }
   }
 
   /* Groups page: per-group icon/badge column + objectives column */
-  [style*="grid-template-columns:300px 1fr"] {
+  .carai-group-card-grid {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
 
   /* People page: leadership card image + copy */
-  [style*="grid-template-columns:340px 1fr"] {
+  .carai-leader-grid {
     grid-template-columns: 1fr !important;
   }
-  [style*="grid-template-columns:340px 1fr"] > div:first-child {
+  .carai-leader-grid > div:first-child {
     min-height: 260px !important;
   }
 
   /* Contact: info cards + map */
-  [style*="grid-template-columns:1fr 1.15fr"] {
+  .carai-contact-info-grid {
     grid-template-columns: 1fr !important;
   }
 
   /* Contact: form intro + fields */
-  [style*="grid-template-columns:1fr 1.3fr"] {
+  .carai-contact-form-grid {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
   }
 
   /* Home: publications copy + contact card */
-  [style*="grid-template-columns:1.3fr 1fr"] {
+  .carai-pubs-contact-grid {
     grid-template-columns: 1fr !important;
   }
 
   /* Home/Publications footer: logo column + 3 link columns */
-  [style*="grid-template-columns:1.7fr 1fr 1fr 1fr"] {
+  .carai-footer-grid {
     grid-template-columns: 1fr 1fr !important;
     row-gap: 28px !important;
   }
 
   /* Application: number/label column + heading/copy column */
-  [style*="grid-template-columns:280px 1fr"] {
+  .carai-capability-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
 
+  /* Media featured story: image + copy */
+  .carai-media-featured-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Media list rows (<a>, 190px 1fr auto) and Publications list rows
      (<article>, 160px 1fr auto) — venue/date | title | link/org */
-  [style*="grid-template-columns:190px 1fr auto"],
-  [style*="grid-template-columns:160px 1fr auto"] {
+  .carai-list-row {
     grid-template-columns: 1fr !important;
     row-gap: 10px !important;
   }
-  [style*="grid-template-columns:190px 1fr auto"] > :last-child,
-  [style*="grid-template-columns:160px 1fr auto"] > :last-child {
+  .carai-list-row > :last-child {
     justify-self: start !important;
   }
 }
 
 /* ---------- ≤640px: phone-only refinements ---------- */
 @media (max-width: 640px) {
-  [style*="max-width:1280px"],
-  [style*="max-width: 1280px"],
-  [style*="max-width:960px"],
-  [style*="max-width:1040px"] {
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-  }
-
-  header nav[style*="gap:28px"] {
+  .carai-nav {
     gap: 12px !important;
   }
 
   /* Home hero: let the stacked heading/CTA/card content grow instead of
      clipping inside a fixed 560px band */
-  section[data-screen-label="Hero"] > div[style*="height:560px"] {
+  .carai-hero-band {
     height: auto !important;
     min-height: 560px;
   }
-  section[data-screen-label="Hero"] [style*="grid-template-columns:minmax(0,1fr) 300px"] {
+  .carai-hero-grid {
     height: auto !important;
     padding-top: 36px !important;
     padding-bottom: 36px !important;
   }
 
   /* footer: single column on phones */
-  [style*="grid-template-columns:1.7fr 1fr 1fr 1fr"] {
+  .carai-footer-grid {
     grid-template-columns: 1fr !important;
   }
 
-  /* Application hero eyebrow/pipeline strips already use flex-wrap; just
+  /* Application hero eyebrow/pipeline strip already uses flex-wrap; just
      tighten the padding of the SENSE/UNDERSTAND/DECIDE/ACT band */
-  [style*="border:1px solid #1e2a38;border-radius:12px;overflow:hidden;background:#0d1620"] > div {
+  .carai-pipeline-band > div {
     padding: 16px 18px !important;
   }
 }

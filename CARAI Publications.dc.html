@@ -44,7 +44,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- ===== PRIMARY NAV ===== -->
   <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="carai-header-row" style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
         <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -52,7 +52,7 @@ body{margin:0;background:#faf8f3}
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav class="carai-nav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="index.html#about" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;" style-hover="color:var(--accent);">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -74,12 +74,12 @@ body{margin:0;background:#faf8f3}
   <!-- ===== PAGE HEADER ===== -->
   <section style="max-width:1280px;margin:0 auto;padding:80px 40px 40px;">
     <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">Research Output</div>
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+    <div class="carai-page-header-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
       <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">연구성과</h1>
       <p style="font-size: 16.5px; line-height: 1.6; color: var(--ink2); margin: 0 0 6px; width: 610px; height: 79px" data-comment-anchor="3367dfd391-p">CARAI 4개 연구실의 세계적 수준의 연구로, 설명가능하고 신뢰할 수 있는 AI 기술을 연구하여 해당 분야 최상위 학회 및 SCI 저널에 게재되었습니다.</p>
     </div>
     <!-- stat strip -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);">
+    <div class="carai-strip-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);">
       <div style="padding:22px 26px 22px 0;border-right:1px solid var(--hair);"><div style="font-family:'Newsreader',serif;font-size:34px;font-weight:500;color:var(--ink);">212</div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;">SCI 및 탑티어국제학회 등 우수 국제논문수</div></div>
       <div style="padding:22px 26px;border-right:1px solid var(--hair);"><div style="font-family:'Newsreader',serif;font-size:34px;font-weight:500;color:var(--ink);">255</div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;">석 · 박사급 고급 국방연구 AI 인력 배출수</div></div>
       <div style="padding:22px 26px;border-right:1px solid var(--hair);"><div style="font-family:'Newsreader',serif;font-size:34px;font-weight:500;color:var(--ink);">122</div><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;">특허출원 및 S/W 등 창출된 지식재산권 수</div></div>
@@ -88,7 +88,7 @@ body{margin:0;background:#faf8f3}
   </section>
 
   <!-- ===== FILTER BAR ===== -->
-  <section style="position:sticky;top:76px;z-index:30;background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);">
+  <section class="carai-filter-bar" style="position:sticky;top:76px;z-index:30;background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);">
     <div style="max-width:1280px;margin:0 auto;padding:16px 40px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
       <div style="display:inline-flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--hair);border-radius:10px;">
         <button data-type="all" onClick="{{ onType }}" style="{{ segOn }}">All</button>
@@ -118,7 +118,7 @@ body{margin:0;background:#faf8f3}
             <span style="flex:1;height:1px;background:var(--hair);"></span>
           </div>
           <sc-for list="{{ yr.items }}" as="p" hint-placeholder-count="4">
-            <article data-cat="conf" data-hay="{{ p.hay }}" style="display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:start;padding:22px 0;border-bottom:1px solid var(--hair);transition:background .15s;" style-hover="background:var(--tint);">
+            <article data-cat="conf" data-hay="{{ p.hay }}" class="carai-list-row" style="display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:start;padding:22px 0;border-bottom:1px solid var(--hair);transition:background .15s;" style-hover="background:var(--tint);">
               <div style="padding-left:6px;">
                 <span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:var(--accent,#1668A0);border:1px solid var(--accent,#1668A0);border-radius:6px;padding:4px 9px;">{{ p.venue }}</span>
                 <div style="font:500 10.5px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:10px;line-height:1.55;">{{ p.groupNum }}<br>{{ p.groupName }}</div>
@@ -151,7 +151,7 @@ body{margin:0;background:#faf8f3}
             <span style="flex:1;height:1px;background:var(--hair);"></span>
           </div>
           <sc-for list="{{ yr.items }}" as="p" hint-placeholder-count="3">
-            <article data-cat="journal" data-hay="{{ p.hay }}" style="display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:start;padding:22px 0;border-bottom:1px solid var(--hair);transition:background .15s;" style-hover="background:var(--tint);">
+            <article data-cat="journal" data-hay="{{ p.hay }}" class="carai-list-row" style="display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:start;padding:22px 0;border-bottom:1px solid var(--hair);transition:background .15s;" style-hover="background:var(--tint);">
               <div style="padding-left:6px;">
                 <span style="display:inline-block;font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#9A6B22;border:1px solid var(--amber,#C4863A);border-radius:6px;padding:4px 9px;">{{ p.venue }}</span>
                 <div style="font:500 10.5px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:10px;line-height:1.55;">{{ p.groupNum }}<br>{{ p.groupName }}</div>
@@ -177,7 +177,7 @@ body{margin:0;background:#faf8f3}
   <!-- ===== FOOTER ===== -->
   <footer style="background:var(--ink);color:#A29A90;">
     <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;">
-      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;">
+      <div class="carai-footer-grid" style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;">
         <div>
           <img src="carai-logo.png" alt="CARAI" style="height:74px;width:auto;display:block;margin-bottom:18px;filter:brightness(0) invert(1);opacity:.92;">
           <p style="font-size:14px;line-height:1.6;color:#8A8177;max-width:260px;margin:0;">Center for Applied Research in Artificial Intelligence — KAIST.</p>

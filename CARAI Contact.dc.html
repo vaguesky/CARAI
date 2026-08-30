@@ -44,7 +44,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- NAV with About dropdown -->
   <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="carai-header-row" style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
         <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -52,7 +52,7 @@ body{margin:0;background:#faf8f3}
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav class="carai-nav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="index.html#about" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -73,7 +73,7 @@ body{margin:0;background:#faf8f3}
   <!-- PAGE HEADER -->
   <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
     <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">Contact</div>
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+    <div class="carai-page-header-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
       <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">문의처</h1>
       <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;" data-comment-anchor="fa6ef5caa7-p">Questions about our research, collaboration, or joining the team? Reach out — we'd love to hear from you.</p>
     </div>
@@ -81,7 +81,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- INFO + MAP -->
   <section style="max-width:1280px;margin:20px auto 0;padding:0 40px;">
-    <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:26px;align-items:stretch;">
+    <div class="carai-contact-info-grid" style="display:grid;grid-template-columns:1fr 1.15fr;gap:26px;align-items:stretch;">
       <div style="display:flex;flex-direction:column;gap:16px;">
         <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;">
           <span style="width:48px;height:48px;flex:none;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--accent,#1668A0);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
@@ -110,7 +110,7 @@ body{margin:0;background:#faf8f3}
   <section style="max-width:1280px;margin:44px auto 0;padding:0 40px 90px;">
     <div style="background:var(--ink);border-radius:20px;padding:clamp(30px,5vw,56px);position:relative;overflow:hidden;">
       <div style="position:absolute;top:-90px;right:-70px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(62,154,214,.26),transparent 66%);"></div>
-      <div style="position:relative;display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start;">
+      <div class="carai-contact-form-grid" style="position:relative;display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start;">
         <div>
           <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:18px;">Send a message</div>
           <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,34px);line-height:1.2;color:#F6F1E7;margin:0 0 14px;">문의하기</h2>

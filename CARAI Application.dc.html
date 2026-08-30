@@ -45,7 +45,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- NAV with About dropdown -->
   <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="carai-header-row" style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
         <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -53,7 +53,7 @@ body{margin:0;background:#faf8f3}
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav class="carai-nav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="index.html#about" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;" style-hover="color:var(--accent);">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -73,13 +73,13 @@ body{margin:0;background:#faf8f3}
 
   <!-- HERO -->
   <section style="background:#08111a;">
-    <div style="max-width:1280px;margin:0 auto;padding:88px 40px 76px;position:relative;">
+    <div class="carai-hero-clip" style="max-width:1280px;margin:0 auto;padding:88px 40px 76px;position:relative;">
       <div style="position:absolute;top:-40px;right:0;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(62,154,214,.16),transparent 66%);pointer-events:none;"></div>
       <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#3E9AD6;margin-bottom:24px;position:relative;">응용처 · Defense Applications</div>
       <h1 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(36px,5vw,60px); line-height: 1.06; letter-spacing: -0.02em; color: #F2F6FA; margin: 0 0 20px; max-width: 22ch; position: relative; width: 1012px; height: 148px">국방응용: 미래 전장의 판단을 더 빠르고, 더 신뢰할 수 있게</h1>
       <p style="font-size: 17px; line-height: 1.7; color: #9DAAB9; max-width: 74ch; margin: 0 0 18px; position: relative; width: 770px; height: 87px">CARAI는 설명가능 인공지능, 다종센서 융합, 극소량 데이터 학습 및 의사결정 인공지능 기술을 바탕으로 감시·정찰에서 상황인지, 지휘관 의사결정 지원까지 연결되는 미래 국방 AI기술을 연구합니다.</p>
       <p style="font-size: 15.5px; line-height: 1.7; color: #7d8b9c; max-width: 74ch; margin: 0 0 34px; position: relative; width: 626px; height: 74px">복잡하고 불확실한 전장환경에서 AI가 단순히 높은 정확도를 내는 것을 넘어, 다양한 센서 정보를 이해하고 제한된 데이터에서도 학습하며 판단의 근거를 설명하고 인간의 의사결정을 지원하는 것이 CARAI가 지향하는 국방 AI입니다.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0;align-items:center;position:relative;border:1px solid #1e2a38;border-radius:12px;overflow:hidden;background:#0d1620;"><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">SENSE</div></div><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">UNDERSTAND</div></div><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">DECIDE</div></div><div style="flex:1;min-width:130px;padding:22px 24px;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#3E9AD6;">ACT</div></div></div>
+      <div class="carai-pipeline-band" style="display:flex;flex-wrap:wrap;gap:0;align-items:center;position:relative;border:1px solid #1e2a38;border-radius:12px;overflow:hidden;background:#0d1620;"><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">SENSE</div></div><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">UNDERSTAND</div></div><div style="flex:1;min-width:130px;padding:22px 24px;border-right:1px solid #1e2a38;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F2F6FA;">DECIDE</div></div><div style="flex:1;min-width:130px;padding:22px 24px;"><div style="font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#3E9AD6;">ACT</div></div></div>
     </div>
   </section>
 
@@ -100,7 +100,7 @@ body{margin:0;background:#faf8f3}
   <section style="background:#08111a;">
     <div style="max-width:1280px;margin:0 auto;padding:20px 40px 80px;">
       <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#3E9AD6;margin-bottom:8px;">Where CARAI AI Works</div>
-    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+    <article class="carai-capability-grid" style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
       <div>
         <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#3E9AD6;margin-bottom:16px;">01</div>
         <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">Intelligent Surveillance &amp; Reconnaissance</div>
@@ -113,7 +113,7 @@ body{margin:0;background:#faf8f3}
         <div style="border-left:2px solid #3E9AD6;padding-left:16px;font:500 13.5px 'IBM Plex Mono',monospace;color:#B7C3D0;line-height:1.6;">감시·정찰 → 표적/이상상황 탐지 → 상황 이해 → 신뢰성 있는 정보 제공</div>
       </div>
     </article>
-    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+    <article class="carai-capability-grid" style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
       <div>
         <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#2E9E5B;margin-bottom:16px;">02</div>
         <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">Multi-Sensor Battlefield Intelligence</div>
@@ -126,7 +126,7 @@ body{margin:0;background:#faf8f3}
         <div style="border-left:2px solid #2E9E5B;padding-left:16px;font:500 13.5px 'IBM Plex Mono',monospace;color:#B7C3D0;line-height:1.6;">주간 EO + 야간 IR + 거리정보 + 음향정보 → 표적·주변 상황 인식 → 단일 센서 한계 보완</div>
       </div>
     </article>
-    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+    <article class="carai-capability-grid" style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
       <div>
         <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#D0473D;margin-bottom:16px;">03</div>
         <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">AI with Limited Defense Data</div>
@@ -139,7 +139,7 @@ body{margin:0;background:#faf8f3}
         <div style="border-left:2px solid #D0473D;padding-left:16px;font:500 13.5px 'IBM Plex Mono',monospace;color:#B7C3D0;line-height:1.6;">적은 사례로부터 학습 · 필요한 데이터를 선택적으로 학습 · 부족한 전장 데이터를 생성·증강</div>
       </div>
     </article>
-    <article style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
+    <article class="carai-capability-grid" style="border-top:1px solid #1e2a38;padding:52px 0;display:grid;grid-template-columns:280px 1fr;gap:52px;">
       <div>
         <div style="font-family:'Newsreader',serif;font-weight:500;font-size:58px;line-height:1;color:#8663C4;margin-bottom:16px;">04</div>
         <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7d8b9c;margin-bottom:10px;">AI-Assisted Command &amp; Decision Making</div>

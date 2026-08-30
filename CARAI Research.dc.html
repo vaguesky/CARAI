@@ -44,7 +44,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- NAV with About dropdown -->
   <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="carai-header-row" style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
         <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -52,7 +52,7 @@ body{margin:0;background:#faf8f3}
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav class="carai-nav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="index.html#about" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -73,7 +73,7 @@ body{margin:0;background:#faf8f3}
   <!-- PAGE HEADER -->
   <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
     <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">Research</div>
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+    <div class="carai-page-header-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
       <h1 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(38px,5vw,62px); line-height: 1.04; letter-spacing: -0.02em; margin: 0; width: 722px; height: 131px">미래 산업을 위한 설명가능한 인공지능 기술</h1>
       <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;" data-comment-anchor="5a1230f2d1-p">우리는 인간 전문가가 AI를 이해하고 신뢰하며 파트너로서 협업할 수 있도록 설명가능한 인공지능 기술을 개발 연구합니다.</p>
     </div>

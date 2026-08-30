@@ -44,7 +44,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- NAV with About dropdown -->
   <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="carai-header-row" style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
         <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -52,7 +52,7 @@ body{margin:0;background:#faf8f3}
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav class="carai-nav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="index.html#about" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -73,7 +73,7 @@ body{margin:0;background:#faf8f3}
   <!-- PAGE HEADER -->
   <section style="max-width:1280px;margin:0 auto;padding:80px 40px 26px;">
     <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">Research Groups</div>
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+    <div class="carai-page-header-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
       <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">4개 연구실 하나의 미션</h1>
       <p style="font-size: 16.5px; line-height: 1.6; color: var(--ink2); margin: 0 0 6px; width: 490px; height: 81px" data-comment-anchor="eeef92ce3f-p">CARAI advances explainable, trustworthy AI through four coordinated research laboratories — from foundational theory to real-world decision support.</p>
     </div>
@@ -91,7 +91,7 @@ body{margin:0;background:#faf8f3}
   <section id="group1" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
     <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
       <div style="height:6px;background:linear-gradient(135deg,#3E9AD6,#1668A0);"></div>
-      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="96e9c12881-div">
+      <div class="carai-group-card-grid" style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="96e9c12881-div">
         <div>
           <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#3E9AD6,#1668A0);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">01</div>
           <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#3E9AD6;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 01 · XAI</span></div>
@@ -130,7 +130,7 @@ body{margin:0;background:#faf8f3}
   <section id="group2" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
     <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
       <div style="height:6px;background:linear-gradient(135deg,#2E9E5B,#1F7A47);"></div>
-      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="5a7a304004-div">
+      <div class="carai-group-card-grid" style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="5a7a304004-div">
         <div>
           <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#2E9E5B,#1F7A47);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">02</div>
           <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#2E9E5B;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 02 · Multimodality</span></div>
@@ -165,7 +165,7 @@ body{margin:0;background:#faf8f3}
   <section id="group3" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
     <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
       <div style="height:6px;background:linear-gradient(135deg,#D0473D,#9E2D25);"></div>
-      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="b369a63beb-div">
+      <div class="carai-group-card-grid" style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="b369a63beb-div">
         <div>
           <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#D0473D,#9E2D25);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">03</div>
           <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#D0473D;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 03 · In-context Learning</span></div>
@@ -200,7 +200,7 @@ body{margin:0;background:#faf8f3}
   <section id="group4" style="max-width:1280px;margin:0 auto;padding:26px 40px 0;scroll-margin-top:96px;">
     <div style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
       <div style="height:6px;background:linear-gradient(135deg,#8663C4,#5E3EA0);"></div>
-      <div style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="73b407d557-div">
+      <div class="carai-group-card-grid" style="padding:clamp(26px,3vw,40px);display:grid;grid-template-columns:300px 1fr;gap:44px;" data-comment-anchor="73b407d557-div">
         <div>
           <div style="width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#8663C4,#5E3EA0);display:flex;align-items:center;justify-content:center;font:600 34px 'Newsreader',serif;color:#fff;margin-bottom:20px;">04</div>
           <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#8663C4;"></span><span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Group 04 · Decision Support</span></div>

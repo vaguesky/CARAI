@@ -47,7 +47,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- ===== PRIMARY NAV ===== -->
   <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="carai-header-row" style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
       <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
         <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -55,7 +55,7 @@ body{margin:0;background:#faf8f3}
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav class="carai-nav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="#about" style="font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s;display:inline-flex;align-items:center;gap:5px;" style-hover="color:var(--accent);">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -78,13 +78,13 @@ body{margin:0;background:#faf8f3}
 
   <!-- ===== HERO ===== -->
   <section data-screen-label="Hero" style="position:relative;">
-    <div style="height:560px;position:relative;overflow:hidden;background:#141210;">
+    <div class="carai-hero-band" style="height:560px;position:relative;overflow:hidden;background:#141210;">
       <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:1;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 22% 25%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(196,134,58,.18),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#E7DECF,#E7DECF 12px,#DDD3C1 12px,#DDD3C1 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 0s infinite both;"></div>
       <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 72% 30%,rgba(255,255,255,.12),transparent 55%),linear-gradient(120deg,rgba(62,154,214,.22),rgba(20,18,15,.06)),repeating-linear-gradient(135deg,#D8E4EC,#D8E4EC 12px,#C6D8E4 12px,#C6D8E4 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 7s infinite both;"></div>
       <div class="heroFrame" style="position:absolute;inset:0;z-index:0;opacity:0;background-position:center;background-size:cover;background-image:radial-gradient(120% 90% at 42% 62%,rgba(255,255,255,.10),transparent 55%),linear-gradient(120deg,rgba(150,96,60,.22),rgba(20,18,15,.10)),repeating-linear-gradient(135deg,#E4D9C8,#E4D9C8 12px,#D8CBB6 12px,#D8CBB6 24px);animation:heroKen 21s cubic-bezier(.4,0,.2,1) 14s infinite both;"></div>
       <video id="heroVideo" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-hidden="true" src="uploads/0705-1.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;z-index:1;"></video>
       <div style="position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(20,18,15,.82) 0%,rgba(20,18,15,.46) 48%,rgba(20,18,15,.14) 100%),linear-gradient(0deg,rgba(20,18,15,.34),transparent 42%);"></div>
-      <div style="max-width:1280px;margin:0 auto;padding:54px 40px 66px;height:100%;position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:end;">
+      <div class="carai-hero-grid" style="max-width:1280px;margin:0 auto;padding:54px 40px 66px;height:100%;position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:end;">
         <div style="max-width:640px;align-self:end;">
           <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:22px;">Center for applied research in artificial intelligence</div><h1 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(34px,4.6vw,60px); line-height: 1.05; letter-spacing: -0.02em; color: #fff; margin: 0 0 22px; width: 637px; height: 191px">신뢰성 있는 사람-AI 협업 의사결정을 위한 설명가능 인공지능 기술 연구</h1>
 
@@ -107,7 +107,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- ===== FEATURED STRIP ===== -->
   <section style="border-bottom:1px solid var(--hair);background:var(--surface);">
-    <div style="max-width:1280px;margin:0 auto;padding:24px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+    <div class="carai-strip-grid" style="max-width:1280px;margin:0 auto;padding:24px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
       <a href="#groups" style="display:flex;gap:14px;padding-right:26px;border-right:1px solid var(--hair);text-decoration:none;align-items:center;">
         <span style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;color:var(--accent,#1668A0);line-height:1;">01</span>
         <span style="font-size:13px;line-height:1.32;font-weight:600;color:var(--ink);" data-comment-anchor="aa4201df07-span">설명가능한 인공지능 연구실</span>
@@ -129,7 +129,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- ===== 01 ABOUT / MISSION ===== -->
   <section id="about" data-screen-label="About" style="max-width:1280px;margin:0 auto;padding:92px 40px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+    <div class="carai-about-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
       <div>
         <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:20px;">01</div>
         <h2 style="font-family: 'Newsreader',serif; font-weight: 500; font-size: clamp(30px,3.4vw,44px); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 20px; width: 555px; height: 98px">사람의 의사결정을 돕는 신뢰할 수 있는 인공지능 기술 연구</h2>
@@ -160,7 +160,7 @@ body{margin:0;background:#faf8f3}
       </div>
       <div id="research" style="position:relative;">
         <div id="groupsTrack" style="display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:16px;">
-          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+          <article class="carai-carousel-card" style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
             <div data-om-raster="" style="position:relative;overflow:hidden;background:#EAEEF4;">
               <img src="uploads/Group1_2.png" alt="Group 1 — Explainable AI Theory Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;">
             </div>
@@ -171,7 +171,7 @@ body{margin:0;background:#faf8f3}
               <a href="CARAI Groups.dc.html#group1" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
             </div>
           </article>
-          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+          <article class="carai-carousel-card" style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
             <div style="position:relative;overflow:hidden;background:#EDF1F6;"><img src="uploads/Group2_4.png" alt="Group 2 — Multimodal Learning and Detection Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
             <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
               <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 02 · Multimodality</div>
@@ -180,7 +180,7 @@ body{margin:0;background:#faf8f3}
               <a href="CARAI Groups.dc.html#group2" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
             </div>
           </article>
-          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+          <article class="carai-carousel-card" style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
             <div style="position:relative;overflow:hidden;background:#EDF1F6;"><img src="uploads/Group3_2.png" alt="Group 3 — Few-shot Learning in the Wild Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
             <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
               <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 03 · In-context Learning</div>
@@ -189,7 +189,7 @@ body{margin:0;background:#faf8f3}
               <a href="CARAI Groups.dc.html#group3" style="color:var(--accent,#1668A0);font:600 15px 'Public Sans',sans-serif;text-decoration:none;border-bottom:2px solid var(--accent,#1668A0);padding-bottom:3px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;">Learn more<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
             </div>
           </article>
-          <article style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
+          <article class="carai-carousel-card" style="flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--paper,#FAF8F3);">
             <div style="position:relative;overflow:hidden;background:#141126;"><img src="uploads/Group4_4.png" alt="Group 4 — Decision Making and Recommendation Lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"></div>
             <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
               <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Group 04 · Decision Support</div>
@@ -219,7 +219,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- ===== PUBLICATIONS + CONTACT ===== -->
   <section id="pubs" data-screen-label="Publications &amp; Contact" style="max-width:1280px;margin:0 auto;padding:92px 40px;">
-    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:stretch;">
+    <div class="carai-pubs-contact-grid" style="display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:stretch;">
       <div>
         <div style="font:500 14px 'IBM Plex Mono',monospace;color:var(--accent,#1668A0);margin-bottom:18px;">03</div>
         <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3vw,40px);line-height:1.1;letter-spacing:-0.01em;margin:0 0 18px;">연구 실적</h2>
@@ -254,7 +254,7 @@ body{margin:0;background:#faf8f3}
   <!-- ===== FOOTER ===== -->
   <footer style="background:var(--ink);color:#A29A90;">
     <div style="max-width:1280px;margin:0 auto;padding:60px 40px 40px;">
-      <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;">
+      <div class="carai-footer-grid" style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;">
         <div>
           <img src="carai-logo.png" alt="CARAI" style="height:74px;width:auto;display:block;margin-bottom:18px;filter:brightness(0) invert(1);opacity:.92;">
           <p style="font-size:14px;line-height:1.6;color:#8A8177;max-width:260px;margin:0;">Center for Applied Research in Artificial Intelligence — KAIST.</p>

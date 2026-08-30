@@ -44,7 +44,7 @@ body{margin:0;background:#faf8f3}
 
   <!-- NAV with About dropdown -->
   <header style="background:var(--paper,#FAF8F3);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:40;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="carai-header-row" style="max-width:1280px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:13px;">
         <img src="carai-icon.png" alt="CARAI logo" style="height:38px;width:auto;display:block;">
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -52,7 +52,7 @@ body{margin:0;background:#faf8f3}
           <span style="font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:3px;">KAIST · AI Center</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;">
+      <nav class="carai-nav" style="display:flex;align-items:center;gap:28px;">
         <div class="nav-dd" tabindex="0">
           <a href="index.html#about" style="font-size:14.5px;color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">About<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a>
           <div class="nav-dd__menu">
@@ -74,14 +74,14 @@ body{margin:0;background:#faf8f3}
   <!-- PAGE HEADER -->
   <section style="max-width:1280px;margin:0 auto;padding:80px 40px 30px;">
     <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1668A0);margin-bottom:22px;">About · People</div>
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
+    <div class="carai-page-header-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;">
       <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-0.02em;margin:0;">CARAI를 만드는 사람들</h1>
       <p style="font-size:16.5px;line-height:1.6;color:var(--ink2);margin:0 0 6px;">A cross-disciplinary team of faculty and researchers building the theory and practice of explainable, trustworthy AI.</p>
     </div>
   </section>
   <section style="max-width:1280px;margin:0 auto;padding:26px 40px 10px;">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;"><span style="font-family:'Newsreader',serif;font-weight:500;font-size:26px;color:var(--ink);">Leadership</span><span style="flex:1;height:1px;background:var(--hair);"></span></div>
-      <div class="lift" style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:340px 1fr;gap:0;">
+      <div class="lift carai-leader-grid" style="background:var(--surface);border:1px solid var(--hair);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:340px 1fr;gap:0;">
         <div style="background:#EDF1F6;"><img src="uploads/Yong Man Ro.jpg" alt="Yong Man Ro" style="width:100%;height:100%;object-fit:cover;display:block;min-height:300px;"></div>
         <div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center;">
           <div style="font:600 26px 'Newsreader',serif;color:var(--ink);">Yong Man Ro</div>
