@@ -73,13 +73,36 @@ html.lang-ko, html.lang-ko * { word-break: keep-all; overflow-wrap: break-word; 
     justify-content: flex-start !important;
   }
 
-  /* the "About" dropdown menu should never run off the edge of the screen */
+  /* "About"/"소개" dropdown: on desktop this is centered on the trigger via
+     `.nav-dd{position:relative}` + `left:50%;transform:translateX(-50%)` on
+     `.nav-dd__menu` — correct when the trigger sits mid-page, but on mobile
+     the trigger is a narrow item near the left edge of a wrapped nav row,
+     so centering ON IT pushes most of a 246px-wide menu off the left edge
+     of the viewport. Fix: drop `.nav-dd`'s own positioning context on
+     mobile so `.nav-dd__menu`'s nearest positioned ancestor becomes
+     `header` (position:sticky, already spans the full viewport width and
+     already sits above everything at z-index:40) instead of the narrow
+     trigger. `top:100%`/`left:50%`/`translateX(-50%)` then resolve against
+     the FULL-WIDTH header — i.e. viewport-centered — instead of the
+     trigger, with no change to the desktop rule itself. */
+  .nav-dd {
+    position: static !important;
+  }
   .nav-dd__menu {
-    left: auto !important;
-    right: 0 !important;
-    transform: none !important;
-    min-width: 240px !important;
-    max-width: 88vw !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 32px) !important;
+    margin: 8px 0 0 !important;
+    box-sizing: border-box !important;
+    max-height: calc(100dvh - 110px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 9999 !important;
   }
 
   /* Publications: the sticky filter bar is pinned to the old fixed 76px
@@ -109,6 +132,46 @@ html.lang-ko, html.lang-ko * { word-break: keep-all; overflow-wrap: break-word; 
   .carai-strip-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     row-gap: 18px !important;
+  }
+
+  /* Publications stat strip: each cell's desktop padding was tuned for a
+     single 4-across row (item 1 has no left padding because it's the row's
+     left edge, items 2/3 have 26px on both sides as "middle" items, item 4
+     has no right padding as the row's right edge). Once the strip above
+     collapses to a 2-column grid, item 3 becomes the left edge of row 2 but
+     keeps its "middle of the row" 26px left padding, so its number and
+     description sit 26px to the right of item 1 directly above it — both
+     shift together because the padding is on their shared parent, not on
+     the number by itself. Every cell gets the same left/right padding here
+     instead, so column 1 (212, 122) and column 2 (255, 2019—2026) each line
+     up on a consistent left edge regardless of desktop row position. */
+  .carai-stat-item {
+    padding: 20px 20px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* Home featured strip items: number + lab title. On desktop this is a
+     single row of 4, so every title fits on one line and the flex
+     `align-items:center` never mattered. Once the strip collapses to 2
+     columns above, group 03's title ("극소량 데이터 기반 효율학습 연구실")
+     is long enough to wrap to a second line while 01/02/04 stay on one —
+     centering that taller item's contents then visibly drops its number
+     out of line with the other three. Fixing it for group 03 alone (a
+     margin/offset/nth-child hack) wouldn't survive a copy change to any of
+     the four titles, so instead every item switches from centered flex to
+     a top-aligned grid with a shared, fixed-width number column: the
+     number and title now start at the same y-position in all four cards
+     regardless of how many lines any one title wraps to. Korean line
+     breaks are handled by the site-wide `html.lang-ko word-break:keep-all`
+     rule above, so a title only wraps at a word boundary. */
+  .carai-strip-item {
+    display: grid !important;
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    align-items: start !important;
   }
 
   /* Home research-groups carousel card: image + copy */
