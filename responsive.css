@@ -1,0 +1,180 @@
+/* CARAI responsive layer — shared across all pages.
+   The pages are built with inline styles from the Claude Design canvas,
+   which only defines the desktop arrangement. This file adds mobile/tablet
+   breakpoints on top without touching the inline desktop styles.
+   Inline styles win specificity over normal CSS, so overrides below use
+   `!important` deliberately and target exact, known style substrings to
+   stay precise instead of blanket-overriding unrelated inline styles. */
+
+/* ---------- universal safety ---------- */
+img, video, iframe { max-width: 100%; }
+
+/* ---------- ≤1024px: fix fixed-px text boxes so they never overflow ----------
+   A few headings/paragraphs carry leftover explicit width/height from the
+   design canvas editor (e.g. width:1012px;height:148px). Those are fine on
+   a 1280px desktop canvas but overflow badly on anything narrower. Text
+   elements never need a fixed box, so this is safe everywhere below the
+   design's own max-width. */
+@media (max-width: 1024px) {
+  h1, h2, h3, p {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* ---------- ≤900px: tablet — stack two/four-column layouts, trim gutters ---------- */
+@media (max-width: 900px) {
+  /* narrower side gutters on every 1280px content wrapper */
+  [style*="max-width:1280px"],
+  [style*="max-width: 1280px"] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  [style*="max-width:960px"],
+  [style*="max-width:1040px"] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* page-header title + intro paragraph (People/Initiative/Research/Groups/Media/Publications/Contact) */
+  [style*="grid-template-columns:1.4fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Home hero: heading/CTA column + "Four research groups" card */
+  [style*="grid-template-columns:minmax(0,1fr) 300px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Home "About" section: copy + video */
+  [style*="grid-template-columns:1fr 1fr;gap:64px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Home featured strip (4 items) + Publications stat strip (4 stats) */
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    row-gap: 18px !important;
+  }
+
+  /* Home research-groups carousel card: image + copy */
+  [style*="grid-template-columns:1.08fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  #groupsTrack article > div:first-child {
+    min-height: 240px !important;
+  }
+
+  /* Groups page: per-group icon/badge column + objectives column */
+  [style*="grid-template-columns:300px 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* People page: leadership card image + copy */
+  [style*="grid-template-columns:340px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns:340px 1fr"] > div:first-child {
+    min-height: 260px !important;
+  }
+
+  /* Contact: info cards + map */
+  [style*="grid-template-columns:1fr 1.15fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact: form intro + fields */
+  [style*="grid-template-columns:1fr 1.3fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Home: publications copy + contact card */
+  [style*="grid-template-columns:1.3fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Home footer: logo column + 3 link columns */
+  [style*="grid-template-columns:1.7fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+    row-gap: 28px !important;
+  }
+
+  /* Application: number/label column + heading/copy column */
+  [style*="grid-template-columns:280px 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Media / Publications list rows: venue+date | title | link+org */
+  a[style*="grid-template-columns:190px 1fr auto"] {
+    grid-template-columns: 1fr !important;
+    row-gap: 10px !important;
+  }
+  a[style*="grid-template-columns:190px 1fr auto"] > :last-child {
+    justify-self: start !important;
+  }
+}
+
+/* ---------- ≤640px: phone ---------- */
+@media (max-width: 640px) {
+  [style*="max-width:1280px"],
+  [style*="max-width: 1280px"],
+  [style*="max-width:960px"],
+  [style*="max-width:1040px"] {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* primary nav: allow the link row to wrap under the logo instead of
+     overflowing off-screen */
+  header div[style*="height:76px"] {
+    height: auto !important;
+    min-height: 76px;
+    flex-wrap: wrap !important;
+    row-gap: 10px;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+  header nav[style*="gap:28px"] {
+    gap: 14px !important;
+    row-gap: 10px !important;
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  /* the "About" dropdown menu should never run off the edge of the screen */
+  .nav-dd__menu {
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+    min-width: 240px !important;
+    max-width: 88vw !important;
+  }
+
+  /* Home hero: let the stacked heading/CTA/card content grow instead of
+     clipping inside a fixed 560px band */
+  section[data-screen-label="Hero"] > div[style*="height:560px"] {
+    height: auto !important;
+    min-height: 560px;
+  }
+  section[data-screen-label="Hero"] [style*="grid-template-columns:minmax(0,1fr) 300px"] {
+    height: auto !important;
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+
+  /* footer: single column on phones */
+  [style*="grid-template-columns:1.7fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Application hero eyebrow/pipeline strips already use flex-wrap; just
+     tighten the padding of the SENSE/UNDERSTAND/DECIDE/ACT band */
+  [style*="border:1px solid #1e2a38;border-radius:12px;overflow:hidden;background:#0d1620"] > div {
+    padding: 16px 18px !important;
+  }
+}
